@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{7e598034-64fc-4cc7-a3f4-58cd8dae0e81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{6b806b79-ea46-4281-b69e-8aa6da5346ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Model.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp" />
+  </ItemGroup>
+</Project>
