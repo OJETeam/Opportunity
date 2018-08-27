@@ -7,16 +7,15 @@
 class Window
 {
 private:
-	const char* title = "Opportunity";
+	static const char* title;
 public:
-	GLFWwindow* window;
-	int width = 800;
-	int height = 600; //TODO CHANGE THIS SHIT
+	static GLFWwindow* window;
+	static int width;
+	static int height;
 
-	Window();
-	void Init();
-	void PostRender();
-	bool Exit;
-	~Window();
+	static void Init();
+	static void Terminate();
+	static void PostRender();
+	static bool Exit;
 };
 

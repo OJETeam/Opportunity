@@ -2,10 +2,12 @@
 
 using namespace std;
 
-Window::Window()
-{
+const char* Window::title = "Opportunity";
 
-}
+int Window::width = 800;
+int Window::height = 600;
+bool Window::Exit = false;
+GLFWwindow* Window::window;
 
 void Window::Init()
 {
@@ -19,7 +21,11 @@ void Window::Init()
 	else
 		cout << "Created GLFW window" << endl;
 	glfwMakeContextCurrent(window);
-	Exit = false;
+}
+
+void Window::Terminate()
+{
+	glfwTerminate();
 }
 
 void Window::PostRender()
@@ -29,9 +35,4 @@ void Window::PostRender()
 
 	glfwSwapBuffers(window);
 	glfwPollEvents();
-}
-
-Window::~Window()
-{
-	glfwTerminate();
 }

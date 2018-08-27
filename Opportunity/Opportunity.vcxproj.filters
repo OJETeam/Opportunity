@@ -28,6 +28,7 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Window.h" />
+    <ClInclude Include="Game.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vector2.cpp">
@@ -49,5 +50,6 @@
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Game.cpp" />
   </ItemGroup>
 </Project>
