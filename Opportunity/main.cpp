@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-	cout << "Hello, world" << endl;
+	cout << "fuck you security" << endl;
 	cin.get();
 }
