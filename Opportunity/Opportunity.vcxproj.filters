@@ -27,6 +27,7 @@
     <ClInclude Include="Player.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vector2.cpp">
@@ -45,5 +46,8 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="glad.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
 </Project>
