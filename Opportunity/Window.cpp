@@ -15,6 +15,9 @@ void Window::Init()
 		cout << "Failed to initialize GLFW" << endl;
 	else
 		cout << "GLFW initialized" << endl;	
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	window = glfwCreateWindow(width, height, title, NULL, NULL);
 	if (window == NULL)
 		cout << "Failed to create GLFW window" << endl;

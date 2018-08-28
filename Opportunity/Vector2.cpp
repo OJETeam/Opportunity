@@ -1,8 +1,15 @@
 #include "Vector2.h"
 #include <valarray>
 
+Vector2::Vector2() 
+{
+	x = 0;
+	y = 0;
+}
+
 Vector2::Vector2(float x, float y) : x(x), y(y)
 {
+
 }
 
 Vector2 Vector2::operator+(Vector2 second) const

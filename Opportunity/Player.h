@@ -4,5 +4,5 @@ class Player :
 	public Entity
 {
 public:
-	Player(Vector2 position);
+	Player(Vector2 position, Model model);
 };

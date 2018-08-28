@@ -39,7 +39,9 @@
     <ClInclude Include="Window.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Color.h" />
+    <ClInclude Include="Color.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vector2.cpp">
@@ -75,7 +77,9 @@
     <ClCompile Include="Window.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Color.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="vertex.txt">

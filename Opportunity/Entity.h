@@ -4,6 +4,6 @@ class Entity :
 	public Object
 {
 public:
-	Entity(Vector2 position);
+	Entity(Vector2 position, Model model);
 };
 

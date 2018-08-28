@@ -1,7 +1,11 @@
 #pragma once
+
+#include <glad/glad.h>
+
 #include "Model.h"
 #include "Vector2.h"
 #include "Texture.h"
+#include "ShaderProgram.h"
 
 class Object
 {
@@ -10,10 +14,15 @@ protected:
 
 public:
 	Model model;
+	Vector2 position;
+	ShaderProgram shader;
 
-	Object(Vector2 position);
+	Object(Vector2 position, Model model);
 
-	virtual void Update() = 0;
+	void UpdateModel();
+
+	void Render();
+	void Update();
 
 	/*bool isColliding(Object& obj) const;
 	virtual void onCollisionEnter(Object& obj);

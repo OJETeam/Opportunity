@@ -7,4 +7,5 @@ struct Color
 	float a;
 
 	Color();
+	~Color();
 };

@@ -9,4 +9,5 @@ Color::Color()
 
 Color::~Color()
 {
+
 }
