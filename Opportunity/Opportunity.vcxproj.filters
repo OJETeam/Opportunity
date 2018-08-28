@@ -88,8 +88,5 @@
     <Text Include="fragment.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <ClCompile Include="Color.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

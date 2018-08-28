@@ -28,7 +28,7 @@ int main()
 	list.push_back(Vector2(1, 1));
 	list.push_back(Vector2(0, 1));
 	list.push_back(Vector2(0, 0));
-	Model model(list);
+	Model model(list, Color::Green);
 	Object test(Vector2(0, 0), model);
 
 	while (!Window::Exit)
