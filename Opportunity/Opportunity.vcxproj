@@ -80,6 +80,7 @@
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -90,6 +91,7 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Window.h" />
