@@ -1,6 +1,37 @@
 #include "Object.h"
 
-Object::Object(Vector2 position)
+Object::Object(Vector2 position, Model model) : model(model), position(position), shader("vertex.txt", "fragment.txt", "")
 {
-	//setPosition(position);
+	glGenVertexArrays(1, &vao);
+	glGenBuffers(1, &vbo);
+	UpdateModel();
+}
+
+void Object::Render()
+{
+	shader.Use();
+	glBindVertexArray(vao);
+	glDrawArrays(GL_TRIANGLES, 0, model.model.size());
+	shader.Unbind();
+}
+
+void Object::UpdateModel()
+{
+	if (model.model.size() == 0) return;
+
+	glBindVertexArray(vao);
+	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(Vector2), nullptr);
+	int a = sizeof(Vector2);
+	int b = 2 * sizeof(float);
+	glEnableVertexAttribArray(0);
+
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
+
+	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+	float* data = (float*)model.model.data();
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vector2) * model.model.size(), model.model.data(), GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }

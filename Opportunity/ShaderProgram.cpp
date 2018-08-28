@@ -1,6 +1,6 @@
 #include "ShaderProgram.h"
 
-ShaderProgram::ShaderProgram(std::string vertex = "Vertex.txt", std::string fragment = "Fragment.txt", std::string geometry = "")
+ShaderProgram::ShaderProgram(std::string vertex = "vertex.txt", std::string fragment = "fragment.txt", std::string geometry = "")
 {
 	object = glCreateProgram();
 	int shader = glCreateShader(GL_VERTEX_SHADER);

@@ -98,6 +98,10 @@
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="fragment.txt" />
+    <Text Include="vertex.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>
