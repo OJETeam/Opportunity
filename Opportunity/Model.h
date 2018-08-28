@@ -12,6 +12,6 @@ public:
 	vector<Vector2> model;
 	Color color;
 
-	Model(vector<Vector2> model);
+	Model(vector<Vector2> model, Color color);
 	~Model();
 };
