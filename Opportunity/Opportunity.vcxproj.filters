@@ -7,6 +7,9 @@
     <Filter Include="Header">
       <UniqueIdentifier>{6b806b79-ea46-4281-b69e-8aa6da5346ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{c7f355c1-e172-438a-beb0-d445f53eaf34}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Model.h">
@@ -71,5 +74,13 @@
     <ClCompile Include="Window.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="vertex.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="fragment.txt">
+      <Filter>Shaders</Filter>
+    </Text>
   </ItemGroup>
 </Project>

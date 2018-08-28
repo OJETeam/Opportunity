@@ -5,12 +5,15 @@
 
 class Object
 {
+protected:
+	unsigned int vao, vbo;
+
 public:
 	Model model;
 
 	Object(Vector2 position);
 
-	virtual void update() = 0;
+	virtual void Update() = 0;
 
 	/*bool isColliding(Object& obj) const;
 	virtual void onCollisionEnter(Object& obj);

@@ -14,6 +14,10 @@ int main()
 	else 
 		cout << "GLAD initialized" << endl;
 
+	glEnable(GL_DEPTH_TEST);
+	glViewport(0, 0, Window::width, Window::height);
+	glClearColor(1, 0, 1, 1);
+
 	while (!Window::Exit)
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
