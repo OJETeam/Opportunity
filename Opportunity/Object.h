@@ -21,8 +21,8 @@ public:
 
 	void UpdateModel();
 
-	void Render();
-	void Update();
+	virtual void Render();
+	virtual void Update() = 0;
 
 	/*bool isColliding(Object& obj) const;
 	virtual void onCollisionEnter(Object& obj);
