@@ -7,6 +7,7 @@
 #include <GLFW/glfw3.h>
 #include <sstream>
 #include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 class ShaderProgram
 {
@@ -16,6 +17,6 @@ public:
 	ShaderProgram(std::string vertex, std::string fragment, std::string geometry);
 	void Use();
 	void Unbind();
-	void SetMat4(const std::string &name, const glm::mat4 &mat);
+	void SetMat4(const char *name, const glm::mat4 &mat);
 };
 

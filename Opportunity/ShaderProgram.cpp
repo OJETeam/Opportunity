@@ -76,9 +76,9 @@ ShaderProgram::ShaderProgram(std::string vertex = "vertex.txt", std::string frag
 	Unbind();
 }
 
-void ShaderProgram::SetMat4(const std::string &name, const glm::mat4 &mat)
+void ShaderProgram::SetMat4(const char *name, const glm::mat4 &mat)
 {
-	glUniformMatrix4fv(glGetUniformLocation(object, name.c_str()), 1, GL_FALSE, &mat[0][0]);
+	glUniformMatrix4fv(glGetUniformLocation(object, name), 1, GL_FALSE, glm::value_ptr(mat));
 }
 
 void ShaderProgram::Use()

@@ -8,6 +8,7 @@ int Window::width = 800;
 int Window::height = 600;
 bool Window::Exit = false;
 GLFWwindow* Window::window;
+glm::mat4 Window::ProjectionMatrix = glm::mat4(1.0f);
 
 void Window::Init()
 {
@@ -24,6 +25,7 @@ void Window::Init()
 	else
 		cout << "Created GLFW window" << endl;
 	glfwMakeContextCurrent(window);
+	ProjectionMatrix = glm::ortho(0.0f, (float)width, 0.0f, (float)height, -1.0f, 1.0f);
 }
 
 void Window::Terminate()

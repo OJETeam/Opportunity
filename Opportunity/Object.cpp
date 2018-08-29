@@ -9,10 +9,7 @@ Object::Object(Vector2 position, Model model) : model(model), position(position)
 
 void Object::Render()
 {
-	shader.Use();
-	glBindVertexArray(vao);
-	glDrawArrays(GL_TRIANGLES, 0, model.model.size());
-	shader.Unbind();
+	
 }
 
 void Object::UpdateModel()

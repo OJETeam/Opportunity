@@ -20,7 +20,7 @@ int main()
 	glViewport(0, 0, Window::width, Window::height);
 	glClearColor(1, 0, 1, 1);
 
-	Cube test(Vector2(0, 0), 1, Color::Green);
+	Cube test(Vector2(10, 10), 100, Color::Green);
 	Game::AddObject(&test);
 
 	while (!Window::Exit)
