@@ -1,7 +1,7 @@
 #include "Game.h"
 
 vector<Object*> Game::objects;
-map<Object*, bool> objectsModifications;
+map<Object*, bool> Game::objectsModifications;
 
 void Game::Update()
 {
