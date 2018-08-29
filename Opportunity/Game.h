@@ -16,4 +16,5 @@ public:
 	static void Update();
 	static void RenderObjects();
 	static void AddObject(Object* object);
+	static void RemoveObject(Object* object);
 };

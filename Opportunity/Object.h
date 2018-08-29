@@ -23,6 +23,8 @@ public:
 
 	virtual void Render();
 	virtual void Update() = 0;
+	virtual void OnCreate();
+	virtual void OnDelete();
 
 	/*bool isColliding(Object& obj) const;
 	virtual void onCollisionEnter(Object& obj);
