@@ -29,3 +29,11 @@ void Object::UpdateModel()
 	glBufferData(GL_ARRAY_BUFFER, sizeof(Vector2) * model.model.size(), model.model.data(), GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
+
+void Object::OnCreate()
+{
+}
+
+void Object::OnDelete()
+{
+}
