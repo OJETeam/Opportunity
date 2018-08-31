@@ -11,6 +11,5 @@ class Cube : public Object
 {
 public:
 	Cube(Vector2 position, float sideLength, Color color);
-	void Render();
 	void Update() override;
 };

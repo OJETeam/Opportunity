@@ -4,3 +4,8 @@ Player::Player(Vector2 position, Model model) : Entity(position, model)
 {
 
 }
+
+void Player::Update()
+{
+	cout << "player updated" << endl;
+}

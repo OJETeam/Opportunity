@@ -38,6 +38,7 @@ void Game::Update()
 			}
 		}
 	}
+	objectsModifications.clear();
 
 	for (Object* obj : objects)
 	{

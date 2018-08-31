@@ -1,15 +1,32 @@
 #include "Object.h"
+#include "Window.h"
+#include "Camera.h"
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 Object::Object(Vector2 position, Model model) : model(model), position(position), shader("vertex.txt", "fragment.txt", "")
 {
 	glGenVertexArrays(1, &vao);
 	glGenBuffers(1, &vbo);
 	UpdateModel();
+
+	shader.Use();
+	shader.SetMat4("view", Camera::ViewMatrix);
+	shader.SetMat4("projection", Window::ProjectionMatrix);
+	shader.Unbind();
 }
 
 void Object::Render()
 {
-	
+	glm::vec3 test = glm::vec3(position.x, position.y, 0);
+	shader.Use();
+	glm::mat4 mat4model = glm::mat4(1.0f);
+	mat4model = glm::translate(mat4model, test);
+	shader.SetMat4("model", mat4model);
+	glBindVertexArray(vao);
+	glDrawArrays(GL_TRIANGLES, 0, model.model.size());
+	shader.Unbind();
 }
 
 void Object::UpdateModel()
