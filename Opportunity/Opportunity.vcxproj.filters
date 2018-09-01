@@ -52,6 +52,7 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -90,6 +91,7 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Input.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="vertex.txt">

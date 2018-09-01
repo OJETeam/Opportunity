@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Input.h"
 
 Player::Player(Vector2 position, Model model) : Entity(position, model)
 {
@@ -7,5 +8,8 @@ Player::Player(Vector2 position, Model model) : Entity(position, model)
 
 void Player::Update()
 {
-	cout << "player updated" << endl;
+	if(Input::KeyPressed(GLFW_KEY_W))
+	{
+		position.y++;
+	}
 }

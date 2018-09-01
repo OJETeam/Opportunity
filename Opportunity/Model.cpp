@@ -3,14 +3,10 @@
 
 Model::Model(vector<Vector2> model, Color color) : model(vector<Vector2>(model)), color(color)
 {
-	//if (color.a == 0)
-		cout << "i am constructed" << endl;
 }
 
 Model::~Model()
 {
-	//if (color.a == 0)
-		cout << "i am deleted" << endl;
 }
 
 Model Model::Cube(float sideLength, Color color)
