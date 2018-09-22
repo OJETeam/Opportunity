@@ -8,10 +8,17 @@
 #include "Cube.h"
 #include "Player.h"
 
+#include "Compiler.h"
+
 using namespace std;
 
 int main()
 {
+	ManagedCppLibrary::Compiler::Compile("class Test \
+	{ \
+	}"
+	);
+
 	Window::Init();
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 		cout << "Failed to initialize GLAD" << endl;

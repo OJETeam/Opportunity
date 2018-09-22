@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Opportunity", "Opportunity\Opportunity.vcxproj", "{A09C3DB4-8D53-44B2-A609-95DAC19E75C8}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D5A76E05-F3F5-4C84-9857-35D325C4C176} = {D5A76E05-F3F5-4C84-9857-35D325C4C176}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsScriptLibrary", "CsScriptLibrary\CsScriptLibrary.csproj", "{D5A76E05-F3F5-4C84-9857-35D325C4C176}"
 EndProject

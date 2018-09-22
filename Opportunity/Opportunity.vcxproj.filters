@@ -53,6 +53,7 @@
     </ClInclude>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="..\ManagedCppLibrary\Compiler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />

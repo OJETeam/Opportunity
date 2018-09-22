@@ -1,6 +1,7 @@
 ﻿using System;
 using System.CodeDom.Compiler;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Microsoft.CSharp;
 
@@ -20,6 +21,8 @@ namespace CsScriptLibrary
                 GenerateExecutable = false,
                 OutputAssembly = "CsScript"
             };
+
+            AppDomain.CurrentDomain.GetAssemblies().ToList().ForEach(a => t.WriteLine(a.FullName));
         }
     }
 }
