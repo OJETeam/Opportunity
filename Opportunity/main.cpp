@@ -9,15 +9,16 @@
 #include "Player.h"
 
 #include "Compiler.h"
+#include "Script.h"
 
 using namespace std;
 
 int main()
 {
-	ManagedCppLibrary::Compiler::Compile("class Test \
+	Script testScript("class Test \
 	{ \
-	}"
-	);
+	}");
+	
 
 	Window::Init();
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))

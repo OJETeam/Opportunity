@@ -19,4 +19,3 @@ public:
 	void Unbind();
 	void SetMat4(const char *name, const glm::mat4 &mat);
 };
-
