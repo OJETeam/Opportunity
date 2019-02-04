@@ -10,7 +10,10 @@
 
 namespace ManagedCppLibrary
 {
-	static class Compiler
+#ifdef CLI
+	public
+#endif
+		class Compiler
 	{
 	public:
 		static API void Compile(std::string text);

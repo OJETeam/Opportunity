@@ -9,11 +9,15 @@ Script::Script(std::string text)
 Script Script::FromFile(const string& path)
 {
 	ifstream file(path);
-	file.seekg(ios::end, 0);
-	int length = file.tellg();
-	file.seekg(ios::beg, 0);
-	char* buff = new char[length];
+
+	if (!file.is_open())
+		throw exception();
+	file.seekg(0, ios::end);
+	int length = (int)file.tellg() + 1;
+	file.seekg(0, ios::beg);
+	char* buff = new char[length]();
 	file.read(buff, length);
+	buff[length - 1] = 0;
 	string text(buff);
 	delete[] buff;
 	return Script(text);

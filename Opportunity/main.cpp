@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <glad\glad.h>
+#include <glad/glad.h>
 #include "Window.h"
 #include "Game.h"
 #include "Model.h"
@@ -15,10 +15,12 @@ using namespace std;
 
 int main()
 {
-	Script testScript("class Test \
-	{ \
-	}");
-	
+	Script testScript = Script::FromFile("test.cs");
+	testScript.Compile();
+
+	system("pause");
+
+	return 0;
 
 	Window::Init();
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))

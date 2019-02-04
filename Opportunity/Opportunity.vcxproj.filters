@@ -54,7 +54,12 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="..\ManagedCppLibrary\Compiler.h" />
-    <ClInclude Include="Script.h" />
+    <ClInclude Include="Script.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -94,7 +99,12 @@
     </ClCompile>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Input.cpp" />
-    <ClCompile Include="Script.cpp" />
+    <ClCompile Include="Script.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="vertex.txt">

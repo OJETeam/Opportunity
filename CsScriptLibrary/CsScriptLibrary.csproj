@@ -44,5 +44,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ManagedCppLibrary\ManagedCppLibrary.vcxproj">
+      <Project>{45122dd7-90f4-4d07-92c2-e63c2da70cae}</Project>
+      <Name>ManagedCppLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
