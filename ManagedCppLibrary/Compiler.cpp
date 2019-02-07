@@ -13,20 +13,33 @@ using std::endl;
 void ManagedCppLibrary::Compiler::Compile(std::string text)
 {
 	System::String^ clrStr = gcnew System::String(text.c_str());
-	cout << msclr::interop::marshal_as<std::string>(clrStr) << endl;
 
 	CSharpCodeProvider^ codeProvider = gcnew CSharpCodeProvider();
 
 	CompilerParameters^ parameters = gcnew CompilerParameters();
 	parameters->GenerateInMemory = true;
 	parameters->GenerateExecutable = false;
+	parameters->CompilerOptions += "/unsafe";
 	parameters->OutputAssembly = "CsScript";
-
+	parameters->ReferencedAssemblies->Add("System.dll");
+	parameters->ReferencedAssemblies->Add("System.Core.dll");
+	parameters->ReferencedAssemblies->Add("ManagedCppLibrary.dll");
+	
+	Console::WriteLine("Referenced assemblies:");
+	for each(String^ error in parameters->ReferencedAssemblies)
+	{
+		Console::WriteLine(error + "FUCKING ASSEMBLY");
+	}
+	
 	CompilerResults^ results = codeProvider->CompileAssemblyFromSource(parameters, clrStr);
+	Console::WriteLine("Errors:");
 	for each(CompilerError^ error in results->Errors)
 	{
 		Console::WriteLine(error->ErrorText + "\n");
 	}
+
+	System::Collections::Generic::List<int>^ list = gcnew System::Collections::Generic::List<int>();
+	int i = System::Linq::Enumerable::FirstOrDefault(list);
 
 	results->CompiledAssembly->GetType("Fuck.Test")->GetMethod("TestFunc")->Invoke(nullptr, nullptr);
 

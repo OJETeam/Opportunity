@@ -9,9 +9,9 @@ Script::Script(std::string text)
 Script Script::FromFile(const string& path)
 {
 	ifstream file(path);
-
 	if (!file.is_open())
 		throw exception();
+
 	file.seekg(0, ios::end);
 	int length = (int)file.tellg() + 1;
 	file.seekg(0, ios::beg);

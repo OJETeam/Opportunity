@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include <glad/glad.h>
 #include "Window.h"
 #include "Game.h"
@@ -7,7 +6,6 @@
 #include "Object.h"
 #include "Cube.h"
 #include "Player.h"
-
 #include "Compiler.h"
 #include "Script.h"
 
@@ -15,13 +13,6 @@ using namespace std;
 
 int main()
 {
-	Script testScript = Script::FromFile("test.cs");
-	testScript.Compile();
-
-	system("pause");
-
-	return 0;
-
 	Window::Init();
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 		cout << "Failed to initialize GLAD" << endl;
@@ -30,6 +21,11 @@ int main()
 
 	glViewport(0, 0, Window::width, Window::height);
 	glClearColor(1, 0, 1, 1);
+
+	Script testScript = Script::FromFile("test.cs");
+	testScript.Compile();
+
+	Unit testUnit(Vector2(13, 44));
 
 	Cube test(Vector2(10, 10), 100, Color::Green);
 	Game::AddObject(&test);

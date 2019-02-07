@@ -11,4 +11,6 @@ public:
 	vector<Script*> scripts;
 	Unit(Vector2 position);
 	~Unit();
+	void Update() override;
+	static __declspec(dllexport) int GetPosition(void* unit);
 };

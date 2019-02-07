@@ -30,9 +30,6 @@
     <ClInclude Include="Color.h">
       <Filter>Engine\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>Engine\Utils</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Engine\Graphics</Filter>
     </ClInclude>
@@ -60,6 +57,9 @@
     <ClInclude Include="Unit.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Engine\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -74,9 +74,6 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="Color.cpp">
-      <Filter>Engine\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2.cpp">
       <Filter>Engine\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
@@ -104,6 +101,9 @@
     </ClCompile>
     <ClCompile Include="Unit.cpp">
       <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Engine\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
