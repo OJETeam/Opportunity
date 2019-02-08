@@ -28,7 +28,7 @@ void ManagedCppLibrary::Compiler::Compile(std::string text)
 	Console::WriteLine("Referenced assemblies:");
 	for each(String^ error in parameters->ReferencedAssemblies)
 	{
-		Console::WriteLine(error + "FUCKING ASSEMBLY");
+		Console::WriteLine(error);
 	}
 	
 	CompilerResults^ results = codeProvider->CompileAssemblyFromSource(parameters, clrStr);

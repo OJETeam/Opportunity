@@ -2,11 +2,11 @@
 
 #include <string>
 
-#ifdef MANAGEDCPPLIBRARY_EXPORTS  
+#ifdef CLI
 #define API __declspec(dllexport)
-#else  
-#define API __declspec(dllimport)   
-#endif  
+#else
+#define API __declspec(dllimport)
+#endif
 
 namespace ManagedCppLibrary
 {

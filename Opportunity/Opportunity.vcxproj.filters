@@ -60,6 +60,7 @@
     <ClInclude Include="Vector2.h">
       <Filter>Engine\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Api.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -105,6 +106,7 @@
     <ClCompile Include="Vector2.cpp">
       <Filter>Engine\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Api.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="vertex.txt">
