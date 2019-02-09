@@ -6,7 +6,7 @@
 #define API __declspec(dllimport)
 #endif
 
-namespace Api
+namespace Engine
 {
 	API void Run();
 	API int GetPosition(void* unit);

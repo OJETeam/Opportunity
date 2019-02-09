@@ -1,5 +1,5 @@
 #include "Script.h"
-#include "Compiler.h"
+#include "CompilerApi.h"
 
 Script::Script(std::string text)
 {
@@ -25,6 +25,15 @@ Script Script::FromFile(const string& path)
 
 bool Script::Compile()
 {
-	ManagedCppLibrary::Compiler::Compile(text); //TODO incapsulate
-	return true;
+	return ScriptManager::CompilerApi::CompileScript(text); //TODO incapsulate
+}
+
+void Script::RunScript()
+{
+	ScriptManager::CompilerApi::RunScript(unit);
+}
+
+void Script::Update()
+{
+	ScriptManager::CompilerApi::Update();
 }

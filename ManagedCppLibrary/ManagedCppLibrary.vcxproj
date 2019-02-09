@@ -93,7 +93,7 @@
       <PreprocessorDefinitions>_DEBUG;MANAGEDCPPLIBRARY_EXPORTS;CLI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Opportunity.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -126,13 +126,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Compiler.h" />
-    <ClInclude Include="Test.h" />
+    <ClInclude Include="CompiledScript.h" />
+    <ClInclude Include="Manager.h" />
+    <ClInclude Include="CompilerApi.h" />
+    <ClInclude Include="Script.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Compiler.cpp" />
-    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="CompiledScript.cpp" />
+    <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="CompilerApi.cpp" />
+    <ClCompile Include="Script.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>

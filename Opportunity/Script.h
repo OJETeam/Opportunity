@@ -17,4 +17,6 @@ public:
 	Script(string path);
 	static Script FromFile(const string& path);
 	bool Compile(); //TODO return not bool, but CompilationResult
+	void RunScript();
+	void Update();
 };

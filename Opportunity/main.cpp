@@ -6,12 +6,12 @@
 #include "Object.h"
 #include "Cube.h"
 #include "Player.h"
-#include "Compiler.h"
 #include "Script.h"
+#include "Api.h"
 
 using namespace std;
 
-int main()
+void Engine::Run()
 {
 	Window::Init();
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -24,8 +24,10 @@ int main()
 
 	Script testScript = Script::FromFile("test.cs");
 	testScript.Compile();
+	testScript.Start();
 
-	Unit testUnit(Vector2(13, 44));
+	Unit testUnit1(Vector2(13, 44));
+	Unit testUnit2(Vector2(55, 66));
 
 	Cube test(Vector2(10, 10), 100, Color::Green);
 	Game::AddObject(&test);
