@@ -1,8 +1,6 @@
 #pragma once
 
-//TODO make template and typedef Vector2<float> Vector2
-
-namespace ManagedCppLibrary
+namespace Engine
 {
 	public value class Vector2
 	{

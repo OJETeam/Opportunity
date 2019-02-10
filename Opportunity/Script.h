@@ -4,19 +4,20 @@
 #include <sstream>
 #include "Unit.h"
 
-using namespace std;
-
 class Unit;
+using namespace std;
 
 class Script
 {
 private:
-	Unit* unit;
+	int id; //TODO Manage ids!
+	static int scriptCount;
 public:
+	string name;
 	string text;
-	Script(string path);
-	static Script FromFile(const string& path);
+	Script(const string& name, const string& text);
+	static Script FromFile(const string& name, const string& path);
 	bool Compile(); //TODO return not bool, but CompilationResult
-	void RunScript();
+	void RunScript(Unit* unit);
 	void Update();
 };

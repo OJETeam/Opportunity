@@ -130,14 +130,12 @@
     <ClInclude Include="Manager.h" />
     <ClInclude Include="CompilerApi.h" />
     <ClInclude Include="Script.h" />
-    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CompiledScript.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="CompilerApi.cpp" />
     <ClCompile Include="Script.cpp" />
-    <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />

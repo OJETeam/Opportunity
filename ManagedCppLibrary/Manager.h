@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "Script.h"
+#include "CompiledScript.h"
 
 using namespace System;
 using namespace System::IO;
@@ -17,10 +18,10 @@ namespace ScriptManager
 	private ref class Manager abstract sealed
 	{
 	internal:
-		static List<CompiledScripts^> compilerScripts;
+		static List<CompiledScript^> compiledScripts;
 		static List<Script^> scripts;
 		static bool CompileScript(String^ text);
-		static void RunScript(void* unit);
+		static void RunScript(int id, void* unit);
 		static void Update();
 	};
 }

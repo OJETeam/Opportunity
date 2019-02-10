@@ -7,9 +7,9 @@ API bool ScriptManager::CompilerApi::CompileScript(std::string text)
 	return Manager::CompileScript(clrStr);
 }
 
-void ScriptManager::CompilerApi::RunScript(void* unit)
+void ScriptManager::CompilerApi::RunScript(int id, void* unit)
 {
-	Manager::RunScript(unit);
+	Manager::RunScript(id, unit);
 }
 
 void ScriptManager::CompilerApi::Update()

@@ -1,7 +1,7 @@
 #include <valarray>
 #include "Vector2.h"
 
-using namespace ManagedCppLibrary;
+using namespace Engine;
 
 Vector2::Vector2(float x, float y) : x(x), y(y)
 {

@@ -12,7 +12,7 @@ namespace ScriptManager
 		Assembly^ assembly;
 		Type^ scriptType;
 	public:
-		CompiledScript(Assembly^ assembly);
+		CompiledScript(Type^ scriptType, Assembly^ assembly);
 		Engine::Script^ CreateScript(void* unit);
 	};
 }

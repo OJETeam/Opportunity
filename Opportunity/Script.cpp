@@ -1,12 +1,15 @@
 #include "Script.h"
 #include "CompilerApi.h"
 
-Script::Script(std::string text)
+int Script::scriptCount = 0;
+
+Script::Script(const string& name, const string& text) : name(name), text(text)
 {
-	this->text = text;
+	id = scriptCount;
+	scriptCount++;
 }
 
-Script Script::FromFile(const string& path)
+Script Script::FromFile(const string& name, const string& path)
 {
 	ifstream file(path);
 	if (!file.is_open())
@@ -20,7 +23,7 @@ Script Script::FromFile(const string& path)
 	buff[length - 1] = 0;
 	string text(buff);
 	delete[] buff;
-	return Script(text);
+	return Script(name, text);
 }
 
 bool Script::Compile()
@@ -28,9 +31,9 @@ bool Script::Compile()
 	return ScriptManager::CompilerApi::CompileScript(text); //TODO incapsulate
 }
 
-void Script::RunScript()
+void Script::RunScript(Unit* unit)
 {
-	ScriptManager::CompilerApi::RunScript(unit);
+	ScriptManager::CompilerApi::RunScript(id, unit);
 }
 
 void Script::Update()

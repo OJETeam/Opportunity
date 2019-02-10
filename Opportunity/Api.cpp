@@ -1,6 +1,7 @@
 #include "Api.h"
+#include "Unit.h"
 
-int Engine::GetPosition(void* unit)
+Vector2 Engine::GetPosition(void* unit)
 {
-	return 42;
+	return static_cast<Unit*>(unit)->position;
 }

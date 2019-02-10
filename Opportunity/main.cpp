@@ -14,7 +14,7 @@ using namespace std;
 void Engine::Run()
 {
 	Window::Init();
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress)))
 		cout << "Failed to initialize GLAD" << endl;
 	else
 		cout << "GLAD initialized" << endl;
@@ -22,12 +22,13 @@ void Engine::Run()
 	glViewport(0, 0, Window::width, Window::height);
 	glClearColor(1, 0, 1, 1);
 
-	Script testScript = Script::FromFile("test.cs");
-	testScript.Compile();
-	testScript.Start();
-
 	Unit testUnit1(Vector2(13, 44));
 	Unit testUnit2(Vector2(55, 66));
+
+	Script testScript = Script::FromFile("test.cs", "test.cs");
+	testScript.Compile();
+	testScript.RunScript(&testUnit2);
+
 
 	Cube test(Vector2(10, 10), 100, Color::Green);
 	Game::AddObject(&test);

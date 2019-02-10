@@ -1,4 +1,5 @@
 #pragma once
+#include "Vector2.h"
 
 #ifdef ENGINE_API
 #define API __declspec(dllexport)
@@ -9,5 +10,5 @@
 namespace Engine
 {
 	API void Run();
-	API int GetPosition(void* unit);
+	API Vector2 GetPosition(void* unit);
 }

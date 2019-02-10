@@ -39,17 +39,15 @@ bool ScriptManager::Manager::CompileScript(String^ text)
 			return false; //ensure that one file contains only one Script
 		foundType = type;
 	}
+	compiledScripts.Add(gcnew CompiledScript(foundType, results->CompiledAssembly));
 
 	return true;
 }
 
-void ScriptManager::Manager::RunScript(void* unit)
+void ScriptManager::Manager::RunScript(int id, void* unit)
 {
-	for each(Script^ script in scripts)
-	{
-		if()
-		script->Start();
-	}
+	Script^ script = compiledScripts[id]->CreateScript(unit);
+	script->Start();
 }
 
 void ScriptManager::Manager::Update()

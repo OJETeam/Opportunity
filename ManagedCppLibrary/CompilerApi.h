@@ -13,7 +13,7 @@ namespace ScriptManager
 	{
 	public:
 		static API bool CompileScript(std::string text);
-		static API void RunScript(void* unit);
+		static API void RunScript(int id, void* unit);
 		static API void Update();
 	};
 }
