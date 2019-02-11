@@ -21,10 +21,10 @@
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Script.cpp">
+    <ClCompile Include="CompiledScript.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CompiledScript.cpp">
+    <ClCompile Include="IEventReceiver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,10 +35,10 @@
     <ClInclude Include="Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Script.h">
+    <ClInclude Include="CompiledScript.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CompiledScript.h">
+    <ClInclude Include="IEventReceiver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

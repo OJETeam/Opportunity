@@ -130,11 +130,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Api.h" />
+    <ClInclude Include="Script.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Api.cpp" />
+    <ClCompile Include="Script.cpp" />
     <ClCompile Include="Unit.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>

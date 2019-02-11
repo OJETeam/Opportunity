@@ -1,17 +1,16 @@
 #pragma once
 #include "../Api/Unit.h"
+#include "IEventReceiver.h"
 
 namespace Engine
 {
-	public ref class Script abstract
+	public ref class Script abstract : public IEventReceiver
 	{
 	internal:
 		void* unit;
 		void setUnit(void* unit);
 	public:
-		Unit^ Unit //SHOULD NOT BE HERE
+		Unit^ Unit;
 		Script();
-		virtual void Start() = 0;
-		virtual void Update() = 0;
 	};
 }

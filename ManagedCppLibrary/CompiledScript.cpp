@@ -1,6 +1,6 @@
 #include "CompiledScript.h"
 
-ScriptManager::CompiledScript::CompiledScript(Type^ scriptType, Assembly^ assembly) : scriptType(scriptType), assembly(assembly)
+ScriptManager::CompiledScript::CompiledScript(Type^ scriptType, Assembly^ assembly) : assembly(assembly), scriptType(scriptType)
 {
 }
 

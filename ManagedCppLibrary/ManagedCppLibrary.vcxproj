@@ -127,15 +127,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CompiledScript.h" />
+    <ClInclude Include="IEventReceiver.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="CompilerApi.h" />
-    <ClInclude Include="Script.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CompiledScript.cpp" />
+    <ClCompile Include="IEventReceiver.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="CompilerApi.cpp" />
-    <ClCompile Include="Script.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
