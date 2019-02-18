@@ -12,6 +12,6 @@ namespace Engine
 	internal:
 		Unit(void* unit);
 	public:
-		Vector2^ GetPosition();
+		Vector2 GetPosition();
 	};
 }

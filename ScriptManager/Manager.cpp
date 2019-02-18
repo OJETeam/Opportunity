@@ -48,6 +48,7 @@ bool ScriptManager::Manager::CompileScript(String^ text)
 void ScriptManager::Manager::RunScript(int id, void* unit)
 {
 	IEventReceiver^ script = compiledScripts[id]->CreateScript(unit);
+	scripts.Add(script);
 	script->Start();
 }
 

@@ -28,6 +28,7 @@ __declspec(dllexport) void Run()
 	Script testScript = Script::FromFile("test.cs", "test.cs");
 	testScript.Compile();
 	testScript.RunScript(&testUnit2);
+	testScript.Update();
 
 
 	Cube test(Vector2(10, 10), 100, Color::Green);
