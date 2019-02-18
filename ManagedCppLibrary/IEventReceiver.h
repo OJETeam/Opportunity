@@ -1,8 +1,11 @@
 #pragma once
-public ref class IEventReceiver
+
+namespace ScriptManager
 {
-public:
-	virtual void Start() = 0;
-	virtual void Update() = 0;
-	IEventReceiver();
-};
+	public interface class IEventReceiver
+	{
+	public:
+		virtual void Start() = 0;
+		virtual void Update() = 0;
+	};
+}

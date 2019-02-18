@@ -1,6 +1,6 @@
-#include "../Opportunity/Api.h"
+__declspec(dllimport) void Run();
 
 int main()
 {
-	Engine::Run();
+	Run();
 }

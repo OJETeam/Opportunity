@@ -5,8 +5,16 @@ Engine::Script::Script() : unit(nullptr)
 
 }
 
-void Engine::Script::setUnit(void* unit)
+ScriptManager::IEventReceiver^ Script::create(void* unit)
 {
+	/*Script^ script = safe_cast<Script^>(Activator::CreateInstance(scriptType));
+	script->unit = unit;
+	script->Unit = gcnew Engine::Unit(unit);
+
+	return safe_cast<ScriptManager::IEventReceiver^>(script);*/
+	
 	this->unit = unit;
-	Unit = gcnew Engine::Unit(unit);
+	this->Unit = gcnew Engine::Unit(unit);
+
+	return safe_cast<ScriptManager::IEventReceiver^>(this);
 }

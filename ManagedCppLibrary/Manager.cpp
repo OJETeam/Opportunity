@@ -10,11 +10,11 @@ bool ScriptManager::Manager::CompileScript(String^ text)
 	parameters->GenerateInMemory = true;
 	parameters->GenerateExecutable = false;
 	parameters->CompilerOptions += "/unsafe";
-	parameters->OutputAssembly = "Script_" + (scripts.Count - 1);
+	parameters->OutputAssembly = "Script_" + scripts.Count;
 	parameters->ReferencedAssemblies->Add("System.dll");
 	parameters->ReferencedAssemblies->Add("System.Core.dll");
 	parameters->ReferencedAssemblies->Add("Api.dll");
-	parameters->ReferencedAssemblies->Add("ScriptManager.dll"); //TODO remove this dependency (used only for Script class)
+	parameters->ReferencedAssemblies->Add("ScriptManager.dll");
 
 	Console::WriteLine("Referenced assemblies:");
 	for each(String^ error in parameters->ReferencedAssemblies)
@@ -30,9 +30,10 @@ bool ScriptManager::Manager::CompileScript(String^ text)
 	}
 
 	Type^ foundType = nullptr;
+
 	for each(Type^ type in results->CompiledAssembly->GetTypes())
 	{
-		if (!type->IsSubclassOf(Script::typeid))
+		if (type->BaseType->FullName != "Engine.Script")
 			continue;
 
 		if (foundType)
@@ -46,13 +47,13 @@ bool ScriptManager::Manager::CompileScript(String^ text)
 
 void ScriptManager::Manager::RunScript(int id, void* unit)
 {
-	Script^ script = compiledScripts[id]->CreateScript(unit);
+	IEventReceiver^ script = compiledScripts[id]->CreateScript(unit);
 	script->Start();
 }
 
 void ScriptManager::Manager::Update()
 {
-	for each(Script^ script in scripts)
+	for each(IEventReceiver^ script in scripts)
 	{
 		script->Update();
 	}

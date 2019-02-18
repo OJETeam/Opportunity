@@ -11,7 +11,7 @@
 
 using namespace std;
 
-void Engine::Run()
+__declspec(dllexport) void Run()
 {
 	Window::Init();
 	if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress)))

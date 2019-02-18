@@ -2,11 +2,13 @@
 
 ScriptManager::CompiledScript::CompiledScript(Type^ scriptType, Assembly^ assembly) : assembly(assembly), scriptType(scriptType)
 {
+	if (methodCreate == nullptr)
+		methodCreate = scriptType->BaseType->GetMethod("create");
 }
 
-Engine::Script^ ScriptManager::CompiledScript::CreateScript(void* unit)
+ScriptManager::IEventReceiver^ ScriptManager::CompiledScript::CreateScript(void* unit)
 {
-	Engine::Script^ script = (Engine::Script^)Activator::CreateInstance(scriptType);
-	script->unit = unit;
-	return script;
+	Object^ script = Activator::CreateInstance(scriptType);
+	Create^ createFunc = safe_cast<Create^>(methodCreate->CreateDelegate(Create::typeid, script));
+	return createFunc(unit);
 }
