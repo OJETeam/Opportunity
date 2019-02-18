@@ -50,7 +50,7 @@
     </ClInclude>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="..\ManagedCppLibrary\Compiler.h" />
+    <ClInclude Include="..\ScriptManager\Compiler.h" />
     <ClInclude Include="Script.h">
       <Filter>Game</Filter>
     </ClInclude>

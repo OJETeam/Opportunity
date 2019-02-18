@@ -63,7 +63,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)include;$(SolutionDir)ManagedCppLibrary;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)ScriptManager;$(IncludePath)</IncludePath>
     <LibraryPath>$(OutDir);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -96,7 +96,7 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ManagedCppLibrary\Compiler.h" />
+    <ClInclude Include="..\ScriptManager\Compiler.h" />
     <ClInclude Include="Api.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Color.h" />
@@ -119,7 +119,7 @@
     <Text Include="vertex.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ManagedCppLibrary\ManagedCppLibrary.vcxproj">
+    <ProjectReference Include="..\ScriptManager\ScriptManager.vcxproj">
       <Project>{45122dd7-90f4-4d07-92c2-e63c2da70cae}</Project>
     </ProjectReference>
   </ItemGroup>

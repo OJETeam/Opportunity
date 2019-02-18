@@ -146,7 +146,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ManagedCppLibrary\ManagedCppLibrary.vcxproj">
+    <ProjectReference Include="..\ScriptManager\ScriptManager.vcxproj">
       <Project>{45122dd7-90f4-4d07-92c2-e63c2da70cae}</Project>
     </ProjectReference>
   </ItemGroup>
