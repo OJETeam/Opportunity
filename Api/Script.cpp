@@ -1,11 +1,11 @@
 #include "Script.h"
 
-Engine::Script::Script() : unit(nullptr)
+Script::Script() : unit(nullptr)
 {
 
 }
 
-ScriptManager::IEventReceiver^ Script::create(void* unit)
+IEventReceiver^ Script::create(void* unit)
 {
 	/*Script^ script = safe_cast<Script^>(Activator::CreateInstance(scriptType));
 	script->unit = unit;
@@ -16,5 +16,5 @@ ScriptManager::IEventReceiver^ Script::create(void* unit)
 	this->unit = unit;
 	this->Unit = gcnew Engine::Unit(unit);
 
-	return safe_cast<ScriptManager::IEventReceiver^>(this);
+	return safe_cast<IEventReceiver^>(this);
 }

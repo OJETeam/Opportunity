@@ -22,14 +22,14 @@ __declspec(dllexport) void Run()
 	glViewport(0, 0, Window::width, Window::height);
 	glClearColor(1, 0, 1, 1);
 
-	Unit testUnit1(Vector2(13, 44));
-	Unit testUnit2(Vector2(55, 66));
-
 	Script testScript = Script::FromFile("test.cs", "test.cs");
 	testScript.Compile();
-	testScript.RunScript(&testUnit2);
-	testScript.Update();
 
+	Unit testUnit1(Vector2(13, 44));
+	Unit testUnit2(Vector2(55, 66));
+	testUnit2.scripts.push_back(&testScript);
+	Game::AddObject(&testUnit2);
+	testScript.RunScript(&testUnit2);
 
 	Cube test(Vector2(10, 10), 100, Color::Green);
 	Game::AddObject(&test);

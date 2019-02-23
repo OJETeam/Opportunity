@@ -10,4 +10,8 @@ Unit::~Unit()
 
 void Unit::Update()
 {
+	for (Script* script : scripts)
+	{
+		script->Update();
+	}
 }

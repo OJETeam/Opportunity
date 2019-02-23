@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Manager.h"
 
-bool ScriptManager::Manager::CompileScript(String^ text)
+bool ScriptManager::Manager::CompileScript(String^ text) //TODO accept script ID as parameter
 {
 	CSharpCodeProvider^ codeProvider = gcnew CSharpCodeProvider();
 
