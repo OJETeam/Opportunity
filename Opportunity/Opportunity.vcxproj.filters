@@ -51,9 +51,6 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="..\ScriptManager\Compiler.h" />
-    <ClInclude Include="Script.h">
-      <Filter>Game</Filter>
-    </ClInclude>
     <ClInclude Include="Unit.h">
       <Filter>Game</Filter>
     </ClInclude>
@@ -61,6 +58,11 @@
       <Filter>Engine\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Api.h" />
+    <ClInclude Include="ScriptLibrary.h" />
+    <ClInclude Include="AbstractScript.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -97,9 +99,6 @@
     </ClCompile>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Input.cpp" />
-    <ClCompile Include="Script.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="Unit.cpp">
       <Filter>Game</Filter>
     </ClCompile>
@@ -107,6 +106,11 @@
       <Filter>Engine\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Api.cpp" />
+    <ClCompile Include="ScriptLibrary.cpp" />
+    <ClCompile Include="AbstractScript.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="vertex.txt">

@@ -6,8 +6,9 @@
 #include "Object.h"
 #include "Cube.h"
 #include "Player.h"
-#include "Script.h"
+#include "AbstractScript.h"
 #include "Api.h"
+#include "ScriptLibrary.h"
 
 using namespace std;
 
@@ -22,8 +23,9 @@ __declspec(dllexport) void Run()
 	glViewport(0, 0, Window::width, Window::height);
 	glClearColor(1, 0, 1, 1);
 
-	Script testScript = Script::FromFile("test.cs", "test.cs");
+	AbstractScript testScript = AbstractScript::FromFile("test.cs", "test.cs");
 	testScript.Compile();
+	ScriptLibrary::AddScript(&testScript);
 
 	Unit testUnit1(Vector2(13, 44));
 	Unit testUnit2(Vector2(55, 66));
@@ -42,6 +44,7 @@ __declspec(dllexport) void Run()
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		Game::Update();
+		ScriptLibrary::Update();
 		Game::RenderObjects();
 		Window::PostRender();
 	}
