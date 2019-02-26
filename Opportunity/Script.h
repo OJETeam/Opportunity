@@ -4,7 +4,10 @@
 class Script
 {
 private:
+	bool started;
 	AbstractScript* script;
+	Unit* unit;
 public:
-	Script(AbstractScript* script);
+	Script(AbstractScript* script, Unit* unit);
+	void Start();
 };

@@ -5,6 +5,7 @@ int AbstractScript::scriptCount = 0;
 
 AbstractScript::AbstractScript(const string& name, const string& text) : name(name), text(text)
 {
+	compiled = false;
 	id = scriptCount;
 	scriptCount++;
 }
@@ -28,7 +29,8 @@ AbstractScript AbstractScript::FromFile(const string& name, const string& path)
 
 bool AbstractScript::Compile()
 {
-	return ScriptManager::CompilerApi::CompileScript(text); //TODO incapsulate
+	compiled = ScriptManager::CompilerApi::CompileScript(text); //TODO incapsulate
+	return compiled;
 }
 
 void AbstractScript::RunScript(Unit* unit)

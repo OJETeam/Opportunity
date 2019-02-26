@@ -9,6 +9,7 @@
 #include "AbstractScript.h"
 #include "Api.h"
 #include "ScriptLibrary.h"
+#include "Unit.h"
 
 using namespace std;
 
@@ -29,9 +30,10 @@ __declspec(dllexport) void Run()
 
 	Unit testUnit1(Vector2(13, 44));
 	Unit testUnit2(Vector2(55, 66));
-	testUnit2.scripts.push_back(&testScript);
+	Game::AddObject(&testUnit1);
 	Game::AddObject(&testUnit2);
-	testScript.RunScript(&testUnit2);
+	testUnit1.AttachScript(&testScript, true);
+	testUnit2.AttachScript(&testScript, true);
 
 	Cube test(Vector2(10, 10), 100, Color::Green);
 	Game::AddObject(&test);

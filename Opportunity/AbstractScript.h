@@ -2,7 +2,6 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-#include "Unit.h"
 
 class Unit;
 using namespace std;
@@ -10,6 +9,7 @@ using namespace std;
 class AbstractScript
 {
 private:
+	bool compiled;
 	int id; //TODO Manage ids!
 	static int scriptCount;
 public:

@@ -4,13 +4,13 @@
 #include "AbstractScript.h"
 #include "Script.h"
 
-class AbstractScript;
-
 class Unit : public Object
 {
-public:
+private:
 	vector<Script> scripts;
+public:
 	Unit(Vector2 position);
 	~Unit();
+	void AttachScript(AbstractScript* script, bool run);
 	void Update() override;
 };
