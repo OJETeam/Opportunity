@@ -34,7 +34,7 @@ ShaderProgram::ShaderProgram(std::string vertex = "vertex.txt", std::string frag
 	buffer << file.rdbuf();
 	file.close();
 	str = buffer.str();
-	char const* fragmentSourcePointer = str.c_str();
+	const char* fragmentSourcePointer = str.c_str();
 	glShaderSource(shader, 1, &fragmentSourcePointer, NULL);
 	glCompileShader(shader);
 	glAttachShader(object, shader);

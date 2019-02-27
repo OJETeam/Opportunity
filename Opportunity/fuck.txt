@@ -1,0 +1,4 @@
+mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+ManagedCppLibrary, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+CsScript, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

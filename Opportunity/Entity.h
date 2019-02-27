@@ -6,4 +6,3 @@ class Entity :
 public:
 	Entity(Vector2 position, Model model);
 };
-

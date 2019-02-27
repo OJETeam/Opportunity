@@ -14,4 +14,6 @@ public:
 
 	Model(vector<Vector2> model, Color color);
 	~Model();
+
+	static Model Cube(float sideLength, Color color);
 };

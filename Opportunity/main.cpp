@@ -1,18 +1,22 @@
 #include <iostream>
-
-#include <glad\glad.h>
+#include <glad/glad.h>
 #include "Window.h"
 #include "Game.h"
 #include "Model.h"
 #include "Object.h"
 #include "Cube.h"
+#include "Player.h"
+#include "AbstractScript.h"
+#include "Api.h"
+#include "ScriptLibrary.h"
+#include "Unit.h"
 
 using namespace std;
 
-int main()
+__declspec(dllexport) void Run()
 {
 	Window::Init();
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress)))
 		cout << "Failed to initialize GLAD" << endl;
 	else
 		cout << "GLAD initialized" << endl;
@@ -20,13 +24,29 @@ int main()
 	glViewport(0, 0, Window::width, Window::height);
 	glClearColor(1, 0, 1, 1);
 
+	AbstractScript testScript = AbstractScript::FromFile("test.cs", "test.cs");
+	testScript.Compile();
+	ScriptLibrary::AddScript(&testScript);
+
+	Unit testUnit1(Vector2(13, 44));
+	Unit testUnit2(Vector2(55, 66));
+	Game::AddObject(&testUnit1);
+	Game::AddObject(&testUnit2);
+	testUnit1.AttachScript(&testScript, true);
+	testUnit2.AttachScript(&testScript, true);
+
 	Cube test(Vector2(10, 10), 100, Color::Green);
 	Game::AddObject(&test);
+
+	Player player = Player(Vector2(0, 0), Model::Cube(50, Color::Green));
+	Game::AddObject(&player);
 
 	while (!Window::Exit)
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
+
 		Game::Update();
+		ScriptLibrary::Update();
 		Game::RenderObjects();
 		Window::PostRender();
 	}

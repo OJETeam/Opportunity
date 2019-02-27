@@ -30,9 +30,6 @@
     <ClInclude Include="Color.h">
       <Filter>Engine\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>Engine\Utils</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Engine\Graphics</Filter>
     </ClInclude>
@@ -52,6 +49,20 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="..\ScriptManager\Compiler.h" />
+    <ClInclude Include="Unit.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Engine\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Api.h" />
+    <ClInclude Include="ScriptLibrary.h" />
+    <ClInclude Include="AbstractScript.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -66,9 +77,6 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="Color.cpp">
-      <Filter>Engine\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2.cpp">
       <Filter>Engine\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
@@ -90,6 +98,19 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Unit.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Engine\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Api.cpp" />
+    <ClCompile Include="ScriptLibrary.cpp" />
+    <ClCompile Include="AbstractScript.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="vertex.txt">
