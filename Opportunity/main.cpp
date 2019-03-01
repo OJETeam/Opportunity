@@ -24,22 +24,15 @@ __declspec(dllexport) void Run()
 	glViewport(0, 0, Window::width, Window::height);
 	glClearColor(1, 0, 1, 1);
 
-	AbstractScript testScript = AbstractScript::FromFile("test.cs", "test.cs");
-	testScript.Compile();
-	ScriptLibrary::AddScript(&testScript);
+	//AbstractScript testScript = AbstractScript::FromFile("test.cs", "test.cs");
+	//testScript.Compile();
+	//ScriptLibrary::AddScript(&testScript);
 
-	Unit testUnit1(Vector2(13, 44));
-	Unit testUnit2(Vector2(55, 66));
-	Game::AddObject(&testUnit1);
-	Game::AddObject(&testUnit2);
-	testUnit1.AttachScript(&testScript, true);
-	testUnit2.AttachScript(&testScript, true);
-
-	Cube test(Vector2(10, 10), 100, Color::Green);
+	Cube test(Vector2(0, 0), 50, Color::Green);
 	Game::AddObject(&test);
 
-	Player player = Player(Vector2(0, 0), Model::Cube(50, Color::Green));
-	Game::AddObject(&player);
+	//Player player = Player(Vector2(1, 0), Model::Cube(0.1, Color::Green));
+	//Game::AddObject(&player);
 
 	while (!Window::Exit)
 	{

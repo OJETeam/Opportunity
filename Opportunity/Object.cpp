@@ -19,10 +19,10 @@ Object::Object(Vector2 position, Model model) : model(model), position(position)
 
 void Object::Render()
 {
-	glm::vec3 test = glm::vec3(position.x, position.y, 0);
 	shader.Use();
+	shader.SetVec4("color", model.color.r, model.color.g, model.color.b, model.color.a); //TODO optimize, remove all getuniformlocation calls
 	glm::mat4 mat4model = glm::mat4(1.0f);
-	mat4model = glm::translate(mat4model, test);
+	mat4model = glm::translate(mat4model, glm::vec3(position.x, position.y, 0));
 	shader.SetMat4("model", mat4model);
 	glBindVertexArray(vao);
 	glDrawArrays(GL_TRIANGLES, 0, model.model.size());
@@ -31,7 +31,8 @@ void Object::Render()
 
 void Object::UpdateModel()
 {
-	if (model.model.size() == 0) return;
+	if (model.model.empty())
+		return;
 
 	glBindVertexArray(vao);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);

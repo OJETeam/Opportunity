@@ -119,8 +119,14 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="fragment.txt" />
-    <Text Include="vertex.txt" />
+    <Content Include="fragment.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DeploymentContent>true</DeploymentContent>
+    </Content>
+    <Content Include="vertex.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DeploymentContent>true</DeploymentContent>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScriptManager\ScriptManager.vcxproj">

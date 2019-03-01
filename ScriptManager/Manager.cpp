@@ -10,12 +10,12 @@ bool ScriptManager::Manager::CompileScript(String^ text) //TODO accept script ID
 	parameters->GenerateInMemory = true;
 	parameters->GenerateExecutable = false;
 	parameters->CompilerOptions += "/unsafe";
-	parameters->OutputAssembly = "Script_" + scripts.Count;
 	parameters->ReferencedAssemblies->Add("System.dll");
+	parameters->ReferencedAssemblies->Add("System.Xml.dll");
+	parameters->ReferencedAssemblies->Add("System.Data.dll");
 	parameters->ReferencedAssemblies->Add("System.Core.dll");
 	parameters->ReferencedAssemblies->Add("Api.dll");
 	parameters->ReferencedAssemblies->Add("ScriptManager.dll");
-
 	Console::WriteLine("Referenced assemblies:");
 	for each(String^ error in parameters->ReferencedAssemblies)
 	{
@@ -31,7 +31,9 @@ bool ScriptManager::Manager::CompileScript(String^ text) //TODO accept script ID
 
 	Type^ foundType = nullptr;
 
-	for each(Type^ type in results->CompiledAssembly->GetTypes())
+	Assembly^ compiledAssembly = results->CompiledAssembly;
+
+	for each(Type^ type in compiledAssembly->GetTypes())
 	{
 		if (type->BaseType->FullName != "Engine.Script")
 			continue;
@@ -41,6 +43,9 @@ bool ScriptManager::Manager::CompileScript(String^ text) //TODO accept script ID
 		foundType = type;
 	}
 	compiledScripts.Add(gcnew CompiledScript(foundType, results->CompiledAssembly));
+
+	Console::WriteLine("Assembly name:");
+	Console::WriteLine(compiledAssembly->FullName);
 
 	return true;
 }

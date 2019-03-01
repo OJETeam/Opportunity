@@ -81,6 +81,26 @@ void ShaderProgram::SetMat4(const char *name, const glm::mat4 &mat)
 	glUniformMatrix4fv(glGetUniformLocation(object, name), 1, GL_FALSE, glm::value_ptr(mat));
 }
 
+void ShaderProgram::SetVec1(const char* name, const float vec0)
+{
+	glUniform1f(glGetUniformLocation(object, name), vec0);
+}
+
+void ShaderProgram::SetVec2(const char* name, Vector2 vec)
+{
+	glUniform2f(glGetUniformLocation(object, name), vec.x, vec.y);
+}
+
+void ShaderProgram::SetVec4(const char* name, float vec0, float vec1, float vec2, float vec3)
+{
+	glUniform4f(glGetUniformLocation(object, name), vec0, vec1, vec2, vec3);
+}
+
+int ShaderProgram::GetProgram()
+{
+	return object;
+}
+
 void ShaderProgram::Use()
 {
 	glUseProgram(object);

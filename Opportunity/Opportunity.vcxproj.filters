@@ -113,11 +113,11 @@
     <ClCompile Include="Script.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="vertex.txt">
+    <Content Include="vertex.txt">
       <Filter>Shaders</Filter>
-    </Text>
-    <Text Include="fragment.txt">
+    </Content>
+    <Content Include="fragment.txt">
       <Filter>Shaders</Filter>
-    </Text>
+    </Content>
   </ItemGroup>
 </Project>
