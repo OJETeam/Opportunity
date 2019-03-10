@@ -28,7 +28,9 @@ __declspec(dllexport) void Run()
 	//testScript.Compile();
 	//ScriptLibrary::AddScript(&testScript);
 
-	Cube test(Vector2(0, 0), 50, Color::Green);
+	Cube test(Vector2(100.0f, 100.0f), 50, Color::Green);
+	test.scale = Vector2(2.0f, 2.0f);
+	test.rotation = -3.14159f / 4;
 	Game::AddObject(&test);
 
 	//Player player = Player(Vector2(1, 0), Model::Cube(0.1, Color::Green));
