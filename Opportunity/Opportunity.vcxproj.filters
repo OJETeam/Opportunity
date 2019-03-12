@@ -63,6 +63,7 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Script.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -111,6 +112,7 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Script.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="vertex.txt">

@@ -19,7 +19,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Api", "Api\Api.vcxproj", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{39BE363A-785D-4779-A6DC-D54C63FA1201}"
 	ProjectSection(SolutionItems) = preProject
-		_TODO.txt = _TODO.txt
+		TODO.txt = TODO.txt
 	EndProjectSection
 EndProject
 Global
