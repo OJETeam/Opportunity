@@ -1,14 +1,14 @@
 #include "Unit.h"
+#include "Time.h"
 
-Unit::Unit(Vector2 position) : Object(position, Model(vector<Vector2>(), Color::Red))
+Unit::Unit(Vector2 position, Model model) : Object(position, model)
 {
 }
 
 Unit::~Unit()
-{
-}
+= default;
 
-void Unit::AttachScript(AbstractScript* script, bool run)
+void Unit::AttachScript(AbstractScript& script, bool run)
 {
 	Script currentScript(script, this);
 	scripts.push_back(currentScript);
@@ -19,5 +19,25 @@ void Unit::AttachScript(AbstractScript* script, bool run)
 
 void Unit::Update()
 {
+	position += direction * (speed * Time::DeltaTime());
+}
 
+Vector2 Unit::GetDirection() const
+{
+	return direction;
+}
+
+void Unit::SetDirection(Vector2 direction)
+{
+	this->direction = direction.normalize();
+}
+
+float Unit::GetSpeed() const
+{
+	return speed;
+}
+
+void Unit::SetSpeed(float speed)
+{
+	this->speed = speed; //TODO speed limit
 }

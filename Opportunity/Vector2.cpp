@@ -7,19 +7,28 @@ Vector2::Vector2()
 	y = 0;
 }
 
-Vector2::Vector2(float x, float y) : x(x), y(y)
-{
-
-}
-
 Vector2 Vector2::operator+(Vector2 second) const
 {
 	return Vector2(x + second.x, y + second.y);
 }
 
+Vector2& Vector2::operator+=(Vector2 second)
+{
+	x += second.x;
+	y += second.y;
+	return *this;
+}
+
 Vector2 Vector2::operator-(Vector2 second) const
 {
 	return Vector2(x - second.x, y - second.y);
+}
+
+Vector2& Vector2::operator-=(Vector2 second)
+{
+	x -= second.x;
+	y -= second.y;
+	return *this;
 }
 
 Vector2 Vector2::operator*(float second) const

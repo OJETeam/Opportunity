@@ -1,8 +1,13 @@
 [ADD]
 	(DeltaTime)
-	SCRIPTED MOVEMENT
+	(SCRIPTED MOVEMENT)
 	PIVOT
 	MAP
 	textures
 	gui
 [FIX]
+	UpdateModel
+	Check all TODO comments
+
+[IDEAS]
+	Implement unit that can move in any direction, not only relative to its rotation

@@ -1,3 +1,7 @@
+#include <fstream>
+#include <sstream>
+#include <glad/glad.h>
+#include <iostream>
 #include "ShaderProgram.h"
 
 ShaderProgram::ShaderProgram(std::string vertex = "vertex.txt", std::string fragment = "fragment.txt", std::string geometry = "")

@@ -7,5 +7,5 @@ Cube::Cube(Vector2 position, float sideLength, Color color) : Object(position, M
 
 void Cube::Update()
 {
-	rotation += 1.0f * Time::DeltaTime();
+	//rotation += 1.0f * Time::DeltaTime();
 }

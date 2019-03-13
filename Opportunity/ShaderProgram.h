@@ -1,11 +1,6 @@
 #pragma once
 
-#include <glad/glad.h>
-#include <iostream>
 #include <string>
-#include <fstream>
-#include <GLFW/glfw3.h>
-#include <sstream>
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "Vector2.h"

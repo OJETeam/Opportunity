@@ -8,6 +8,6 @@ private:
 	AbstractScript* script;
 	Unit* unit;
 public:
-	Script(AbstractScript* script, Unit* unit);
+	Script(AbstractScript& script, Unit* unit);
 	void Start();
 };

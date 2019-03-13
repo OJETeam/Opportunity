@@ -1,6 +1,6 @@
 #include "Script.h"
 
-Script::Script(AbstractScript* script, Unit* unit) : script(script), unit(unit)
+Script::Script(AbstractScript& script, Unit* unit) : script(&script), unit(unit)
 {
 	started = false;
 }

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <glad/glad.h>
 #include "Model.h"
 #include "Vector2.h"
 #include "Texture.h"

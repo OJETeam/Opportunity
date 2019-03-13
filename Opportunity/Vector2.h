@@ -9,9 +9,11 @@ public:
 
 	Vector2();
 
-	Vector2(float x, float y);
+	Vector2(float x, float y) : x(x), y(y) {}
 	Vector2 operator+(Vector2 second) const;
+	Vector2& operator+=(Vector2 second);
 	Vector2 operator-(Vector2 second) const;
+	Vector2& operator-=(Vector2 second);
 	Vector2 operator*(float second) const;
 	Vector2 operator/(float second) const;
 	float length() const;
