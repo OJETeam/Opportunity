@@ -5,6 +5,10 @@
 	MAP
 	textures
 	gui
+		basic elements
+		parent-child system
+		text
+
 [FIX]
 	UpdateModel
 	Check all TODO comments
