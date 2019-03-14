@@ -25,7 +25,7 @@ __declspec(dllexport) void Run()
 	glViewport(0, 0, Window::width, Window::height);
 	glClearColor(1, 0, 1, 1);
 
-	AbstractScript testScript = AbstractScript::FromFile("test.cs", "test.cs");
+	AbstractScript testScript = AbstractScript::FromFile("Test", "Test.cs");
 	testScript.Compile();
 	ScriptLibrary::AddScript(&testScript);
 
