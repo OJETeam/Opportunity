@@ -50,7 +50,6 @@
     </ClInclude>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="..\ScriptManager\Compiler.h" />
     <ClInclude Include="Unit.h">
       <Filter>Game</Filter>
     </ClInclude>

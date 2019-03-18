@@ -20,6 +20,11 @@ namespace Engine
 			Vector2 get();
 			void set(Vector2 direction);
 		}
+		property float rotation
+		{
+			float get();
+			void set(float direction);
+		}
 		Vector2 GetPosition();
 	};
 }

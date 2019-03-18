@@ -1,7 +1,7 @@
 #include "Api.h"
 #include "Unit.h"
 
-#define UNIT (static_cast<Unit*>(unit))//психанул
+#define UNIT (static_cast<Unit*>(unit)) //психанул
 
 Vector2 Engine::GetPosition(void* unit)
 {
@@ -26,4 +26,14 @@ void Engine::SetSpeed(void* unit, float speed)
 float Engine::GetSpeed(void* unit)
 {
 	return UNIT->GetSpeed();
+}
+
+void Engine::SetRotationSpeed(void* unit, float speed)
+{
+	UNIT->SetRotationSpeed(speed);
+}
+
+float Engine::GetRotationSpeed(void* unit)
+{
+	return UNIT->GetRotationSpeed();
 }

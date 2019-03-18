@@ -26,6 +26,7 @@ void Object::Render()
 	mat4model = glm::translate(mat4model, glm::vec3(position.x, position.y, 0));
 	mat4model = glm::scale(mat4model, glm::vec3(scale.x, scale.y, 1.0f));
 	mat4model = glm::rotate(mat4model, rotation, glm::vec3(0, 0, 1));
+	mat4model = glm::translate(mat4model, glm::vec3(-model.pivot.x, -model.pivot.y, 0));
 	shader.SetMat4("model", mat4model);
 	glBindVertexArray(vao);
 	glDrawArrays(GL_TRIANGLES, 0, model.model.size());

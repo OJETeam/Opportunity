@@ -1,13 +1,14 @@
 [ADD]
 	(DeltaTime)
 	(SCRIPTED MOVEMENT)
-	PIVOT
-	MAP
-	textures
+	(PIVOT)
 	gui
 		basic elements
 		parent-child system
 		text
+	Map experiments
+	textures
+	SORT FILES TO FOLDERS
 
 [FIX]
 	UpdateModel

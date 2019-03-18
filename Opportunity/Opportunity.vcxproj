@@ -99,7 +99,6 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ScriptManager\Compiler.h" />
     <ClInclude Include="Api.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Color.h" />

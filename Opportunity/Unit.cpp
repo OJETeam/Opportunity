@@ -20,6 +20,7 @@ void Unit::AttachScript(AbstractScript& script, bool run)
 void Unit::Update()
 {
 	position += direction * (speed * Time::DeltaTime());
+	rotation += rotationSpeed * Time::DeltaTime();
 }
 
 Vector2 Unit::GetDirection() const
@@ -40,4 +41,14 @@ float Unit::GetSpeed() const
 void Unit::SetSpeed(float speed)
 {
 	this->speed = speed; //TODO speed limit
+}
+
+float Unit::GetRotationSpeed() const
+{
+	return rotationSpeed;
+}
+
+void Unit::SetRotationSpeed(float rotationSpeed)
+{
+	this->rotationSpeed = rotationSpeed; //TODO speed limit
 }

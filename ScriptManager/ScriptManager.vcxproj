@@ -133,7 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CompiledScript.cpp" />
-    <ClCompile Include="IEventReceiver.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="CompilerApi.cpp" />
   </ItemGroup>

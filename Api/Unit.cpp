@@ -25,6 +25,16 @@ void Engine::Unit::direction::set(Vector2 direction)
 	SetDirection(unit, direction);
 }
 
+float Engine::Unit::rotation::get()
+{
+	return GetRotationSpeed(unit);
+}
+
+void Engine::Unit::rotation::set(float rotationSpeed)
+{
+	SetRotationSpeed(unit, rotationSpeed);
+}
+
 Engine::Vector2 Engine::Unit::GetPosition()
 {
 	return Vector2(Engine::GetPosition(unit));

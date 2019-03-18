@@ -5,7 +5,7 @@ Engine::Script::Script() : unit(nullptr)
 
 }
 
-IEventReceiver^ Engine::Script::create(void* unit)
+ScriptManager::IEventReceiver^ Engine::Script::create(void* unit)
 {
 	/*Script^ script = safe_cast<Script^>(Activator::CreateInstance(scriptType));
 	script->unit = unit;
@@ -16,5 +16,5 @@ IEventReceiver^ Engine::Script::create(void* unit)
 	this->unit = unit;
 	this->Unit = gcnew Engine::Unit(unit);
 
-	return safe_cast<IEventReceiver^>(this);
+	return safe_cast<ScriptManager::IEventReceiver^>(this);
 }
