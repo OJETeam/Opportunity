@@ -11,6 +11,7 @@
 #include "ScriptLibrary.h"
 #include "Unit.h"
 #include "Time.h"
+#include "GuiBase.h"
 
 using namespace std;
 
@@ -33,6 +34,9 @@ __declspec(dllexport) void Run()
 	test.scale = Vector2(2.0f, 2.0f);
 	test.AttachScript(testScript, true);
 	Game::AddObject(&test);
+
+	//GuiBase j = GuiBase(Vector2(9, 9), Model::Cube(50, Color::Blue, Vector2(0.5, 0.5)));
+	//j.SubscribeClick([]() mutable -> void {return; });
 
 	Time::Start();
 	while (!Window::Exit)

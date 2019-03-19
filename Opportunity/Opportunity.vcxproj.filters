@@ -16,6 +16,9 @@
     <Filter Include="Engine\Utils">
       <UniqueIdentifier>{3b6b5126-3690-4c80-9e4b-9e862b68087e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Gui">
+      <UniqueIdentifier>{c3cbe8db-1273-4415-b26a-7f308ff82d65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cube.h">
@@ -63,6 +66,7 @@
     </ClInclude>
     <ClInclude Include="Script.h" />
     <ClInclude Include="Time.h" />
+    <ClInclude Include="GuiBase.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -112,6 +116,7 @@
     </ClCompile>
     <ClCompile Include="Script.cpp" />
     <ClCompile Include="Time.cpp" />
+    <ClCompile Include="GuiBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="vertex.txt">

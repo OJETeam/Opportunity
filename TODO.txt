@@ -2,6 +2,7 @@
 	(DeltaTime)
 	(SCRIPTED MOVEMENT)
 	(PIVOT)
+	Clicks
 	gui
 		basic elements
 		parent-child system
@@ -9,7 +10,7 @@
 	Map experiments
 	textures
 	SORT FILES TO FOLDERS
-
+	Depth testing
 [FIX]
 	UpdateModel
 	Check all TODO comments
