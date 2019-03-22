@@ -10,6 +10,7 @@ bool Window::Exit = false;
 GLFWwindow* Window::window;
 glm::mat4 Window::projectionMatrix = glm::mat4(1.0f);
 glm::mat4 Window::guiProjectionMatrix = glm::mat4(1.0f);
+glm::mat4 Window::guiViewMatrix = glm::mat4(1.0f);
 
 void Window::Init()
 {
@@ -20,8 +21,8 @@ void Window::Init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	window = glfwCreateWindow(width, height, title, NULL, NULL);
-	if (window == NULL)
+	window = glfwCreateWindow(width, height, title, nullptr, nullptr);
+	if (window == nullptr)
 		cout << "Failed to create GLFW window" << endl;
 	else
 		cout << "Created GLFW window" << endl;

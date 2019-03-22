@@ -11,7 +11,7 @@ public:
 	GuiObject* parent;
 	Vector2 parentPivot;
 	bool clickable;
-	GuiObject(Vector2 position, Model model);
+	GuiObject(Vector2 relativePosition, Model model);
 	void Render() override;
 	void SubscribeClick(ClickEvent response);
 	void UnsubscribeClick(ClickEvent response);

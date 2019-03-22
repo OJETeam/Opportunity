@@ -34,7 +34,7 @@ __declspec(dllexport) void Run()
 	test.AttachScript(testScript, true);
 	Game::AddObject(test);
 
-	GuiButton obj = GuiButton(Vector2(400, 0), Vector2(400, 100), Color(0.5, 0.5, 0), Vector2(0, 0));
+	GuiButton obj = GuiButton(Vector2(0.5, 0), Vector2(0.5, 0.1), Color(0.5, 0.5, 0), Vector2(0, 0));
 	Game::AddObject(obj);
 
 	//GuiObject j = GuiObject(Vector2(9, 9), Model::Cube(50, Color::Blue, Vector2(0.5, 0.5)));

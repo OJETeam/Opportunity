@@ -2,12 +2,12 @@
 	(DeltaTime)
 	(SCRIPTED MOVEMENT)
 	(PIVOT)
+	parent-child system
 	Camera zoom
 	Clicks
 	Input
 	gui
 		basic elements
-		parent-child system
 		text
 	Map experiments
 	textures

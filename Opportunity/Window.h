@@ -15,6 +15,7 @@ private:
 public:
 	static glm::mat4 projectionMatrix;
 	static glm::mat4 guiProjectionMatrix;
+	static glm::mat4 guiViewMatrix;
 	static GLFWwindow* window;
 	static int width;
 	static int height;

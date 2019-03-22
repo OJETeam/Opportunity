@@ -4,6 +4,6 @@
 class GuiButton : public GuiObject
 {
 public:
-	GuiButton(Vector2 position, Vector2 size, Color color, Vector2 relativePivot);
+	GuiButton(Vector2 relativePosition, Vector2 size, Color color, Vector2 relativePivot);
 	void Update() override;
 };

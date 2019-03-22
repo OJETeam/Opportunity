@@ -1,6 +1,6 @@
 #include "GuiButton.h"
 
-GuiButton::GuiButton(Vector2 position, Vector2 size, Color color, Vector2 relativePivot) : GuiObject(position, Model::Rectangle(size, color, relativePivot))
+GuiButton::GuiButton(Vector2 relativePosition, Vector2 size, Color color, Vector2 relativePivot) : GuiObject(relativePosition, Model::Rectangle(size, color, relativePivot))
 {
 
 }
