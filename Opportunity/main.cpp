@@ -5,13 +5,12 @@
 #include "Model.h"
 #include "Object.h"
 #include "Cube.h"
-#include "Player.h"
 #include "AbstractScript.h"
 #include "Api.h"
 #include "ScriptLibrary.h"
 #include "Unit.h"
 #include "Time.h"
-#include "GuiBase.h"
+#include "GuiButton.h"
 
 using namespace std;
 
@@ -33,9 +32,12 @@ __declspec(dllexport) void Run()
 	Unit test(Vector2(200.0f, 200.0f), Model::Cube(50, Color::Blue, Vector2(0.5, 0.5)));
 	test.scale = Vector2(2.0f, 2.0f);
 	test.AttachScript(testScript, true);
-	Game::AddObject(&test);
+	Game::AddObject(test);
 
-	//GuiBase j = GuiBase(Vector2(9, 9), Model::Cube(50, Color::Blue, Vector2(0.5, 0.5)));
+	GuiButton obj = GuiButton(Vector2(400, 0), Vector2(400, 100), Color(0.5, 0.5, 0), Vector2(0, 0));
+	Game::AddObject(obj);
+
+	//GuiObject j = GuiObject(Vector2(9, 9), Model::Cube(50, Color::Blue, Vector2(0.5, 0.5)));
 	//j.SubscribeClick([]() mutable -> void {return; });
 
 	Time::Start();
@@ -45,7 +47,6 @@ __declspec(dllexport) void Run()
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		Game::Update();
-		ScriptLibrary::Update();
 		Game::RenderObjects();
 		Window::PostRender();
 	}

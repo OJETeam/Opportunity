@@ -13,7 +13,8 @@ class Window
 private:
 	static const char* title;
 public:
-	static glm::mat4 ProjectionMatrix;
+	static glm::mat4 projectionMatrix;
+	static glm::mat4 guiProjectionMatrix;
 	static GLFWwindow* window;
 	static int width;
 	static int height;

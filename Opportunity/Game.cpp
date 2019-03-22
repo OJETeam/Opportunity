@@ -1,9 +1,21 @@
 #include "Game.h"
+#include "Camera.h"
+#include "ScriptLibrary.h"
 
-vector<Object*> Game::objects;
-map<Object*, bool> Game::objectsModifications;
+vector<Object*> Game::gameObjects;
+vector<Object*> Game::guiObjects;
+map<Object*, bool> Game::gameObjectsModifications;
+map<Object*, bool> Game::guiObjectsModifications;
 
 void Game::Update()
+{
+	UpdateArray(gameObjects, gameObjectsModifications);
+	UpdateArray(guiObjects, guiObjectsModifications);
+	Camera::Update(); //TODO add multiple cameras
+	ScriptLibrary::Update();
+}
+
+void Game::UpdateArray(vector<Object*>& objects, map<Object*, bool>& objectsModifications)
 {
 	for (auto modifiedObj : objectsModifications)
 	{
@@ -48,21 +60,38 @@ void Game::Update()
 
 void Game::RenderObjects()
 {
-	for (Object* obj : objects)
+	for (Object* obj : gameObjects)
+	{
+		obj->Render();
+	}
+	for (Object* obj : guiObjects)
 	{
 		obj->Render();
 	}
 }
 
-void Game::AddObject(Object* object)
+void Game::AddObject(GameObject& object)
 {
-	if (!object)
+	if (!&object)
 		return;
 
-	objectsModifications[object] = true;
+	gameObjectsModifications[&object] = true;
 }
 
-void Game::RemoveObject(Object* object)
+void Game::RemoveObject(GameObject& object)
 {
-	objectsModifications[object] = false;
+	gameObjectsModifications[&object] = false;
+}
+
+void Game::AddObject(GuiObject& object)
+{
+	if (!&object)
+		return;
+
+	guiObjectsModifications[&object] = true;
+}
+
+void Game::RemoveObject(GuiObject& object)
+{
+	guiObjectsModifications[&object] = false;
 }

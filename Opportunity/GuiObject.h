@@ -3,17 +3,16 @@
 
 typedef void(*ClickEvent)();
 
-class GuiBase : Object
+class GuiObject : public Object
 {
 private:
 	vector<ClickEvent> events;
 public:
-	GuiBase* parent;
+	GuiObject* parent;
 	Vector2 parentPivot;
 	bool clickable;
-	GuiBase(Vector2 position, Model model);
-	~GuiBase();
-	void Update() override {}
+	GuiObject(Vector2 position, Model model);
+	void Render() override;
 	void SubscribeClick(ClickEvent response);
 	void UnsubscribeClick(ClickEvent response);
 };

@@ -1,7 +1,7 @@
 #pragma once
-#include "Object.h"
-class Entity :
-	public Object
+#include "GameObject.h"
+
+class Entity : public GameObject
 {
 public:
 	Entity(Vector2 position, Model model);

@@ -5,16 +5,22 @@
 #include <map>
 
 #include "Window.h"
-#include "Object.h"
+#include "GameObject.h"
+#include "GuiObject.h"
 
 class Game
 {
 private:
-	static vector<Object*> objects;
-	static map<Object*, bool> objectsModifications;
+	static vector<Object*> gameObjects;
+	static vector<Object*> guiObjects;
+	static map<Object*, bool> gameObjectsModifications;
+	static map<Object*, bool> guiObjectsModifications;
 public:
 	static void Update();
+	static void UpdateArray(vector<Object*>& objects, map<Object*, bool>& objectsModifications);
 	static void RenderObjects();
-	static void AddObject(Object* object);
-	static void RemoveObject(Object* object);
+	static void AddObject(GameObject& object);
+	static void RemoveObject(GameObject& object);
+	static void AddObject(GuiObject& object);
+	static void RemoveObject(GuiObject& object);
 };

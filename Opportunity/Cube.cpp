@@ -1,7 +1,7 @@
 #include "Cube.h"
 #include "Time.h"
 
-Cube::Cube(Vector2 position, float sideLength, Color color) : Object(position, Model::Cube(sideLength, color, Vector2(0, 0)))
+Cube::Cube(Vector2 position, float sideLength, Color color) : GameObject(position, Model::Cube(sideLength, color, Vector2(0, 0)))
 {
 }
 

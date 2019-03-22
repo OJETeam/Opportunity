@@ -1,10 +1,10 @@
 #pragma once
 #include <vector>
-#include "Object.h"
 #include "AbstractScript.h"
 #include "Script.h"
+#include "GameObject.h"
 
-class Unit : public Object
+class Unit : public GameObject
 {
 private:
 	vector<Script> scripts;

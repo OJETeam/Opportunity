@@ -2,7 +2,9 @@
 	(DeltaTime)
 	(SCRIPTED MOVEMENT)
 	(PIVOT)
+	Camera zoom
 	Clicks
+	Input
 	gui
 		basic elements
 		parent-child system
@@ -12,6 +14,7 @@
 	SORT FILES TO FOLDERS
 	Depth testing
 [FIX]
+	Window resize
 	UpdateModel
 	Check all TODO comments
 

@@ -1,7 +1,7 @@
 #include "Unit.h"
 #include "Time.h"
 
-Unit::Unit(Vector2 position, Model model) : Object(position, model)
+Unit::Unit(Vector2 position, Model model) : GameObject(position, model)
 {
 }
 

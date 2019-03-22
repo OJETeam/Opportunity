@@ -22,4 +22,5 @@ public:
 	~Model();
 
 	static Model Cube(float sideLength, Color color, Vector2 relativePivot);
+	static Model Rectangle(Vector2 size, Color color, Vector2 relativePivot);
 };

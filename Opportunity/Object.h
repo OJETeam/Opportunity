@@ -9,7 +9,6 @@ class Object
 {
 protected:
 	unsigned int vao, vbo;
-
 public:
 	Model model;
 	Vector2 position;
@@ -21,7 +20,7 @@ public:
 
 	void UpdateModel();
 
-	virtual void Render();
+	virtual void Render() = 0;
 	virtual void Update() = 0;
 	virtual void OnCreate();
 	virtual void OnDelete();
