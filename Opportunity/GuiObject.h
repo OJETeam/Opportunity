@@ -6,9 +6,9 @@ typedef void(*ClickEvent)();
 class GuiObject : public Object
 {
 private:
+	GuiObject* parent;
 	vector<ClickEvent> events;
 public:
-	GuiObject* parent;
 	Vector2 parentPivot;
 	bool clickable;
 	GuiObject(Vector2 relativePosition, Model model);

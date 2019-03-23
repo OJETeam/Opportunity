@@ -13,6 +13,7 @@
 	textures
 	SORT FILES TO FOLDERS
 	Depth testing
+	Pivot for parent???????
 [FIX]
 	Window resize
 	UpdateModel
@@ -20,3 +21,4 @@
 
 [IDEAS]
 	Implement unit that can move in any direction, not only relative to its rotation
+	Transform class like in Unity3D?

@@ -15,6 +15,7 @@ public:
 	Vector2 scale = Vector2(1.0f, 1.0f);
 	float rotation = 0;
 	ShaderProgram shader;
+	Vector2 parentPivot;
 
 	Object(Vector2 position, Model model);
 
