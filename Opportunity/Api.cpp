@@ -5,7 +5,7 @@
 
 Vector2 Engine::GetPosition(void* unit)
 {
-	return UNIT->position;
+	return UNIT->getPosition();
 }
 
 void Engine::SetDirection(void* unit, Vector2 direction)

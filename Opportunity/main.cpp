@@ -30,7 +30,7 @@ __declspec(dllexport) void Run()
 	ScriptLibrary::AddScript(&testScript);
 
 	Unit test(Vector2(200.0f, 200.0f), Model::Cube(50, Color::Blue, Vector2(0.5, 0.5)));
-	test.scale = Vector2(2.0f, 2.0f);
+	test.setSize(Vector2(2.0f, 2.0f));
 	test.AttachScript(testScript, true);
 	Game::AddObject(test);
 

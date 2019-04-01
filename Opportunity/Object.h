@@ -7,11 +7,10 @@
 
 class Object
 {
-private:
+protected:
 	Vector2 position;
 	Vector2 scale = Vector2(1.0f, 1.0f);
 	float rotation = 0;
-protected:
 	Object* parent;
 	vector<Object*> children; //TODO maybe not optimal
 	unsigned int vao, vbo;
