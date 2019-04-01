@@ -8,6 +8,7 @@
 class Object
 {
 protected:
+	Object* parent;
 	unsigned int vao, vbo;
 public:
 	Model model;

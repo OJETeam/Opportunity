@@ -5,7 +5,6 @@
 #include "Camera.h"
 #include "Window.h"
 
-
 GameObject::GameObject(Vector2 position, Model model) : Object(position, model)
 {
 }
@@ -35,6 +34,7 @@ void GameObject::SetParent(GameObject& parent, bool reposition)
 {
 	if (reposition)
 		position = parent.position;
+
 	this->parent = &parent;
 }
 
