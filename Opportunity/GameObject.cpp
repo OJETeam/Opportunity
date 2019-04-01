@@ -33,8 +33,9 @@ void GameObject::Render()
 void GameObject::SetParent(GameObject& parent, bool reposition)
 {
 	if (reposition)
-		position = parent.position;
+		setPosition(parent.getPosition());
 
+	parent.children.push_back(this);
 	this->parent = &parent;
 }
 

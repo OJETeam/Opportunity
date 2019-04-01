@@ -32,6 +32,53 @@ void Object::UpdateModel()
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
+float Object::getX() const
+{
+	return position.x;
+}
+
+float Object::getY() const
+{
+	return position.y;
+}
+
+Vector2 Object::getPosition() const
+{
+	return position;
+}
+
+void Object::setPosition(Vector2 position)
+{
+	if (!children.empty())
+	{
+		for (int i = 0; i < children.size(); i++)
+			children[i]->setPosition(children[i]->position + (position - this->position));
+	}
+
+	this->position = position;
+}
+
+Vector2 Object::getSize() const
+{
+	return scale;
+}
+
+void Object::setSize(Vector2 scale)
+{
+	//TODO parent
+	this->scale = scale;
+}
+
+float Object::getRotation() const
+{
+	return rotation;
+}
+
+void Object::setRotation(float rotation)
+{
+	this->rotation = rotation;
+}
+
 void Object::OnCreate()
 {
 }
