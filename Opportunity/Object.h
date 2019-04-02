@@ -8,7 +8,7 @@
 class Object
 {
 protected:
-	Vector2 position;
+	Vector2 position; //TODO maybe private (position, scale, rotation)
 	Vector2 scale = Vector2(1.0f, 1.0f);
 	float rotation = 0;
 	Object* parent;

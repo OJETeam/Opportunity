@@ -19,8 +19,8 @@ void Unit::AttachScript(AbstractScript& script, bool run)
 
 void Unit::Update()
 {
-	position += direction * (speed * Time::DeltaTime());
-	rotation += rotationSpeed * Time::DeltaTime();
+	setPosition(direction * (speed * Time::DeltaTime()));
+	setRotation(rotationSpeed * Time::DeltaTime());
 }
 
 Vector2 Unit::GetDirection() const

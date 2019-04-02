@@ -51,8 +51,10 @@ void Object::setPosition(Vector2 position)
 {
 	if (!children.empty())
 	{
+		const Vector2 diff = position - this->position;
+
 		for (int i = 0; i < children.size(); i++)
-			children[i]->setPosition(children[i]->position + (position - this->position));
+			children[i]->setPosition(children[i]->position + diff);
 	}
 
 	this->position = position;
