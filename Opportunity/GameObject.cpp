@@ -15,7 +15,7 @@ void GameObject::Render()
 
 	glm::mat4 mat4model = glm::mat4(1.0f);
 	mat4model = glm::translate(mat4model, glm::vec3(position.x, position.y, 0));
-	mat4model = glm::scale(mat4model, glm::vec3(scale.x, scale.y, 1.0f));
+	mat4model = glm::scale(mat4model, glm::vec3(size.x, size.y, 1.0f));
 	mat4model = glm::rotate(mat4model, rotation, glm::vec3(0, 0, 1));
 	mat4model = glm::translate(mat4model, glm::vec3(-model.pivot.x, -model.pivot.y, 0));
 

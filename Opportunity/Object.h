@@ -8,11 +8,11 @@
 class Object
 {
 protected:
-	Vector2 position; //TODO maybe private (position, scale, rotation)
-	Vector2 scale = Vector2(1.0f, 1.0f);
+	Vector2 position; //TODO maybe private (position, size, rotation)
+	Vector2 size = Vector2(1.0f, 1.0f); 
 	float rotation = 0;
 	Object* parent;
-	vector<Object*> children; //TODO maybe not optimal
+	vector<Object*> children;
 	unsigned int vao, vbo;
 public:
 	Model model;
@@ -25,7 +25,7 @@ public:
 	float getX() const;
 	float getY() const;
 	Vector2 getPosition() const;
-	void setPosition(Vector2 position);
+	void setPosition(Vector2 position); //TODO maybe add addPosition function
 	Vector2 getSize() const;
 	void setSize(Vector2 scale);
 	float getRotation() const;

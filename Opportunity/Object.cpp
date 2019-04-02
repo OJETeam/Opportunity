@@ -62,13 +62,13 @@ void Object::setPosition(Vector2 position)
 
 Vector2 Object::getSize() const
 {
-	return scale;
+	return size;
 }
 
 void Object::setSize(Vector2 scale)
 {
 	//TODO parent
-	this->scale = scale;
+	this->size = scale;
 }
 
 float Object::getRotation() const

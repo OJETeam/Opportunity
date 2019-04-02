@@ -18,6 +18,8 @@
 	Window resize
 	UpdateModel
 	Check all TODO comments
+	add RemoveParent function
+	Creating objects. Objects created locally are deleted. Manipulating them using solely pointers is inconvenient
 
 [IDEAS]
 	Implement unit that can move in any direction, not only relative to its rotation
