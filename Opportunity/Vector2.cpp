@@ -48,7 +48,11 @@ float Vector2::length() const
 
 Vector2 Vector2::normalize(float length) const
 {
-	return *this * (length / this->length());
+	float vecLength = this->length();
+	if (vecLength == 0)
+		return Vector2(0, 0);
+
+	return *this * (length / vecLength);
 }
 
 float Vector2::dot(Vector2 second) const

@@ -69,10 +69,6 @@ void InitTestObjects()
 	test4->SetParent(*test, false);
 	Game::AddObject(*test4);
 
-	Unit* test5 = new Unit(Vector2(200.0f, 150.0f), Model::Cube(30, Color::Green, Vector2(0.5, 0.5)));
-	test5->SetParent(*test, false);
-	Game::AddObject(*test5);
-
 	GuiButton* obj = new GuiButton(Vector2(0.5, 0), Vector2(0.5, 0.1), Color(0.5, 0.5, 0), Vector2(0, 0));
 	Game::AddObject(*obj);
 }
