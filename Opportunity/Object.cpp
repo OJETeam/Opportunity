@@ -8,6 +8,7 @@
 
 Object::Object(Vector2 position, Model model) : model(model), position(position), shader("vertex.txt", "fragment.txt", "")
 {
+	parent = nullptr;
 	glGenVertexArrays(1, &vao);
 	glGenBuffers(1, &vbo);
 	UpdateModel();

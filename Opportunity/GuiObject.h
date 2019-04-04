@@ -6,7 +6,6 @@ typedef void(*ClickEvent)();
 class GuiObject : public Object
 {
 private:
-	GuiObject* parent;
 	vector<ClickEvent> events;
 public:
 	Vector2 parentPivot;
