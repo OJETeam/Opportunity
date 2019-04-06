@@ -90,6 +90,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="PivotVisualizer.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="AbstractScript.cpp" />
     <ClCompile Include="Script.cpp" />
@@ -114,6 +115,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="PivotVisualizer.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="AbstractScript.h" />
     <ClInclude Include="Script.h" />

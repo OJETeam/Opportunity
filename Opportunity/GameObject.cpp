@@ -4,6 +4,8 @@
 #include "GameObject.h"
 #include "Camera.h"
 #include "Window.h"
+#include "PivotVisualizer.h"
+#include "Game.h"
 
 GameObject::GameObject(Vector2 position, Model model) : Object(position, model)
 {

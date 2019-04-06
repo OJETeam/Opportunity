@@ -19,6 +19,9 @@
     <Filter Include="Engine\Gui">
       <UniqueIdentifier>{c3cbe8db-1273-4415-b26a-7f308ff82d65}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{bd717a50-9e7c-4605-88d3-fd46106c4a6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cube.h">
@@ -86,6 +89,9 @@
     </ClInclude>
     <ClInclude Include="GuiButton.h">
       <Filter>Engine\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="PivotVisualizer.h">
+      <Filter>Test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +162,9 @@
     </ClCompile>
     <ClCompile Include="GuiButton.cpp">
       <Filter>Engine\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="PivotVisualizer.cpp">
+      <Filter>Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

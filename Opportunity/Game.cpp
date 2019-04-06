@@ -1,6 +1,9 @@
 #include "Game.h"
 #include "Camera.h"
 #include "ScriptLibrary.h"
+#include "PivotVisualizer.h"
+
+#define DEBUG_PIVOT
 
 vector<Object*> Game::gameObjects;
 vector<Object*> Game::guiObjects;
@@ -76,6 +79,11 @@ void Game::AddObject(GameObject& object)
 		return;
 
 	gameObjectsModifications[&object] = true;
+
+#ifdef DEBUG_PIVOT
+	PivotVisualizer* pivotVisualizer = new PivotVisualizer(&object);
+	gameObjectsModifications[pivotVisualizer] = true;
+#endif
 }
 
 void Game::RemoveObject(GameObject& object)
