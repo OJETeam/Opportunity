@@ -69,6 +69,9 @@ void InitTestObjects()
 	test4->SetParent(*test, false);
 	Game::AddObject(*test4);
 
+	Unit* center = new Unit(Vector2(0, 0), Model::Rectangle(Vector2(20, 20), Color::Red, Vector2(0.5, 0.5)));
+	Game::AddObject(*center);
+
 	GuiButton* obj = new GuiButton(Vector2(0.5, 0), Vector2(0.5, 0.1), Color(0.5, 0.5, 0), Vector2(0, 0));
 	Game::AddObject(*obj);
 }

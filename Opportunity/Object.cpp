@@ -79,6 +79,22 @@ float Object::getRotation() const
 
 void Object::setRotation(float rotation)
 {
+	if (!children.empty())
+	{
+		const float diff = rotation - this->rotation;
+		glm::mat4 matrix = glm::mat4(1.0f);
+		matrix = glm::rotate(matrix, diff, glm::vec3(0, 0, 1));
+
+		for (int i = 0; i < children.size(); i++)
+		{
+			Vector2& childPos = children[i]->position;
+			glm::vec4 vec = matrix * glm::vec4(childPos.x, childPos.y, 0, 1);
+			childPos.x = vec.x;
+			childPos.y = vec.y;
+			//children[i]->setPosition(children[i]->position + diff);
+		}
+	}
+
 	this->rotation = rotation;
 }
 
