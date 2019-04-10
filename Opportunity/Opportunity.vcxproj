@@ -136,6 +136,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DeploymentContent>true</DeploymentContent>
     </Content>
+	<Content Include="Test.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DeploymentContent>true</DeploymentContent>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScriptManager\ScriptManager.vcxproj">

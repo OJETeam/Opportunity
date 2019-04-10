@@ -174,5 +174,8 @@
     <Content Include="vertex.vert">
       <Filter>Shaders</Filter>
     </Content>
+	<Content Include="Test.cs">
+      <Filter>Test</Filter>
+    </Content>
   </ItemGroup>
 </Project>
