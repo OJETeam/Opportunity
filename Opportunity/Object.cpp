@@ -87,11 +87,12 @@ void Object::setRotation(float rotation)
 
 		for (int i = 0; i < children.size(); i++)
 		{
-			Vector2& childPos = children[i]->position;
-			glm::vec4 vec = matrix * glm::vec4(childPos.x, childPos.y, 0, 1);
-			childPos.x = vec.x;
-			childPos.y = vec.y;
-			//children[i]->setPosition(children[i]->position + diff);
+			Object& child = *children[i];
+			Vector2& childPos = child.position;
+			glm::vec4 vec = matrix * glm::vec4(childPos.x - position.x, childPos.y - position.y, 0, 1);
+			childPos.x = vec.x + position.x;
+			childPos.y = vec.y + position.y;
+			child.setRotation(child.rotation + diff);
 		}
 	}
 
