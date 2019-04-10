@@ -168,10 +168,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="vertex.txt">
+    <Content Include="fragment.frag">
       <Filter>Shaders</Filter>
     </Content>
-    <Content Include="fragment.txt">
+    <Content Include="vertex.vert">
       <Filter>Shaders</Filter>
     </Content>
   </ItemGroup>

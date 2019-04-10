@@ -6,7 +6,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-Object::Object(Vector2 position, Model model) : model(model), position(position), shader("vertex.txt", "fragment.txt", "")
+Object::Object(Vector2 position, Model model) : model(model), position(position), shader("vertex.vert", "fragment.frag", "")
 {
 	parent = nullptr;
 	glGenVertexArrays(1, &vao);
