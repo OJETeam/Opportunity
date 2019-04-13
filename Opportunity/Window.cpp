@@ -27,8 +27,8 @@ void Window::Init()
 	else
 		cout << "Created GLFW window" << endl;
 	glfwMakeContextCurrent(window);
-	projectionMatrix = glm::ortho(0.0f, (float)width, 0.0f, (float)height, -1.0f, 1.0f);
-	guiProjectionMatrix = glm::ortho(0.0f, 1.0f, 0.0f, 1.0f, -1.0f, 1.0f);
+	projectionMatrix = glm::ortho(0.0f, (float)width, 0.0f, (float)height, 0.0f, 1.0f);
+	guiProjectionMatrix = glm::ortho(0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f);
 }
 
 void Window::Terminate()

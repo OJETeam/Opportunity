@@ -26,6 +26,7 @@ __declspec(dllexport) void Run()
 
 	glViewport(0, 0, Window::width, Window::height);
 	glClearColor(1, 0, 1, 1);
+	glEnable(GL_DEPTH_TEST);
 
 	InitTestObjects();
 
@@ -36,7 +37,7 @@ __declspec(dllexport) void Run()
 	while (!Window::Exit)
 	{
 		Time::Update();
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		Game::Update();
 		Game::RenderObjects();
@@ -60,14 +61,17 @@ void InitTestObjects()
 
 	Unit* test2 = new Unit(Vector2(150.0f, 200.0f), Model::Cube(30, Color::Green, Vector2(0.5, 0.5)));
 	test2->SetParent(*test, false);
+	test2->setDepth(1);
 	Game::AddObject(*test2);
 
 	Unit* test3 = new Unit(Vector2(250.0f, 200.0f), Model::Cube(30, Color::Green, Vector2(0.5, 0.5)));
 	test3->SetParent(*test, false);
+	test3->setDepth(1);
 	Game::AddObject(*test3);
 
 	Unit* test4 = new Unit(Vector2(200.0f, 250.0f), Model::Rectangle(Vector2(20, 40), Color::Green, Vector2(0.5, 0.5)));
 	test4->SetParent(*test, false);
+	test4->setDepth(1);
 	Game::AddObject(*test4);
 
 	Unit* center = new Unit(Vector2(0, 0), Model::Rectangle(Vector2(20, 20), Color::Red, Vector2(0.5, 0.5)));

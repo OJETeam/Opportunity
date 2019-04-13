@@ -2,24 +2,26 @@
 	(DeltaTime)
 	(SCRIPTED MOVEMENT)
 	(PIVOT)
-	parent-child system
-	Camera zoom
+	(parent-child system)
+	(depth testing)
 	Clicks
 	Input
 	gui
 		basic elements
 		text
+	Camera zoom
 	Map experiments
 	textures
-	SORT FILES TO FOLDERS
-	Depth testing
+	parent-child size updating
 	Pivot for parent???????
+
 [FIX]
 	Window resize
 	UpdateModel
 	Check all TODO comments
 	add RemoveParent function
 	Creating objects. Objects created locally are deleted. Manipulating them using solely pointers is inconvenient
+	SORT FILES TO FOLDERS
 
 [IDEAS]
 	Implement unit that can move in any direction, not only relative to its rotation

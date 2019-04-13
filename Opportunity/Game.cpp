@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "Game.h"
 #include "Camera.h"
 #include "ScriptLibrary.h"
@@ -9,6 +11,7 @@ vector<Object*> Game::gameObjects;
 vector<Object*> Game::guiObjects;
 map<Object*, bool> Game::gameObjectsModifications;
 map<Object*, bool> Game::guiObjectsModifications;
+bool Game::updateDepth = false;
 
 void Game::Update()
 {
@@ -36,6 +39,7 @@ void Game::UpdateArray(vector<Object*>& objects, map<Object*, bool>& objectsModi
 			}
 			if (!contained)
 			{
+				updateDepth = true;
 				modifiedObj.first->OnCreate();
 				objects.push_back(modifiedObj.first);
 			}
@@ -55,6 +59,12 @@ void Game::UpdateArray(vector<Object*>& objects, map<Object*, bool>& objectsModi
 	}
 	objectsModifications.clear();
 
+	if (updateDepth)
+	{
+		sort(objects.begin(), objects.end(), [](const Object* first, const Object* second) -> bool { return first->getDepth() > second->getDepth(); });
+		updateDepth = false;
+	}
+
 	for (Object* obj : objects)
 	{
 		obj->Update();
@@ -63,13 +73,15 @@ void Game::UpdateArray(vector<Object*>& objects, map<Object*, bool>& objectsModi
 
 void Game::RenderObjects()
 {
-	for (Object* obj : gameObjects)
-	{
-		obj->Render();
-	}
 	for (Object* obj : guiObjects)
 	{
-		obj->Render();
+		if (obj->visible)
+			obj->Render();
+	}
+	for (Object* obj : gameObjects)
+	{
+		if (obj->visible)
+			obj->Render();
 	}
 }
 
@@ -102,4 +114,9 @@ void Game::AddObject(GuiObject& object)
 void Game::RemoveObject(GuiObject& object)
 {
 	guiObjectsModifications[&object] = false;
+}
+
+void Game::UpdateDepth()
+{
+	updateDepth = true;
 }

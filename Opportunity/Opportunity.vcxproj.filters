@@ -16,11 +16,17 @@
     <Filter Include="Engine\Utils">
       <UniqueIdentifier>{3b6b5126-3690-4c80-9e4b-9e862b68087e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\Gui">
-      <UniqueIdentifier>{c3cbe8db-1273-4415-b26a-7f308ff82d65}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Test">
       <UniqueIdentifier>{bd717a50-9e7c-4605-88d3-fd46106c4a6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Objects">
+      <UniqueIdentifier>{3c1f9a61-9e6a-4311-a507-41add13e65da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GUI">
+      <UniqueIdentifier>{5d310069-7cf3-43b7-b634-ec0d3c59f171}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GUI">
+      <UniqueIdentifier>{c3cbe8db-1273-4415-b26a-7f308ff82d65}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -85,13 +91,16 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="GuiObject.h">
-      <Filter>Engine\Gui</Filter>
+      <Filter>Engine\GUI</Filter>
     </ClInclude>
     <ClInclude Include="GuiButton.h">
-      <Filter>Engine\Gui</Filter>
+      <Filter>Engine\GUI</Filter>
     </ClInclude>
     <ClInclude Include="PivotVisualizer.h">
       <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiPanel.h">
+      <Filter>Engine\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -158,13 +167,16 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="GuiObject.cpp">
-      <Filter>Engine\Gui</Filter>
+      <Filter>Engine\GUI</Filter>
     </ClCompile>
     <ClCompile Include="GuiButton.cpp">
-      <Filter>Engine\Gui</Filter>
+      <Filter>Engine\GUI</Filter>
     </ClCompile>
     <ClCompile Include="PivotVisualizer.cpp">
       <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiPanel.cpp">
+      <Filter>Engine\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -174,7 +186,7 @@
     <Content Include="vertex.vert">
       <Filter>Shaders</Filter>
     </Content>
-	<Content Include="Test.cs">
+    <Content Include="Test.cs">
       <Filter>Test</Filter>
     </Content>
   </ItemGroup>

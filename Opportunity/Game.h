@@ -15,6 +15,7 @@ private:
 	static vector<Object*> guiObjects;
 	static map<Object*, bool> gameObjectsModifications;
 	static map<Object*, bool> guiObjectsModifications;
+	static bool updateDepth;
 public:
 	static void Update();
 	static void UpdateArray(vector<Object*>& objects, map<Object*, bool>& objectsModifications);
@@ -23,4 +24,5 @@ public:
 	static void RemoveObject(GameObject& object);
 	static void AddObject(GuiObject& object);
 	static void RemoveObject(GuiObject& object);
+	static void UpdateDepth();
 };

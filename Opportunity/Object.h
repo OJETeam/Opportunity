@@ -9,7 +9,8 @@ class Object
 {
 protected:
 	Vector2 position; //TODO maybe private (position, size, rotation)
-	Vector2 size = Vector2(1.0f, 1.0f); 
+	unsigned int depth = 0;
+	Vector2 size = Vector2(1.0f, 1.0f);
 	float rotation = 0;
 	Object* parent = nullptr;
 	vector<Object*> children;
@@ -18,6 +19,7 @@ public:
 	Model model;
 	ShaderProgram shader;
 	Vector2 parentPivot;
+	bool visible = true;
 
 	Object(Vector2 position, Model model);
 
@@ -30,6 +32,8 @@ public:
 	void setSize(Vector2 scale);
 	float getRotation() const;
 	void setRotation(float rotation);
+	unsigned int getDepth() const;
+	void setDepth(unsigned int depth);
 
 	virtual void Render() = 0;
 	virtual void Update() = 0;

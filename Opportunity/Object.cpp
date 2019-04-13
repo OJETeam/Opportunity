@@ -5,6 +5,7 @@
 #include <glad/glad.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include "Game.h"
 
 Object::Object(Vector2 position, Model model) : model(model), position(position), shader("vertex.vert", "fragment.frag", "")
 {
@@ -95,6 +96,17 @@ void Object::setRotation(float rotation)
 	}
 
 	this->rotation = rotation;
+}
+
+unsigned int Object::getDepth() const
+{
+	return depth;
+}
+
+void Object::setDepth(unsigned int depth)
+{
+	this->depth = depth;
+	Game::UpdateDepth();
 }
 
 void Object::OnCreate()
