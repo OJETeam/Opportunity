@@ -1,6 +1,10 @@
 #include "Model.h"
 #include <iostream>
 
+Model::Model()
+{
+}
+
 Model::Model(vector<Vector2> model, Color color) : model(vector<Vector2>(model)), color(color)
 {
 }

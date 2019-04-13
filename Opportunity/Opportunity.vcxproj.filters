@@ -102,6 +102,9 @@
     <ClInclude Include="GuiPanel.h">
       <Filter>Engine\GUI</Filter>
     </ClInclude>
+    <ClInclude Include="EscapeMenu.h">
+      <Filter>Game\GUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -177,6 +180,9 @@
     </ClCompile>
     <ClCompile Include="GuiPanel.cpp">
       <Filter>Engine\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="EscapeMenu.cpp">
+      <Filter>Game\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

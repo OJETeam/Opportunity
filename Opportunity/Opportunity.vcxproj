@@ -83,6 +83,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="EscapeMenu.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="glad.c" />
@@ -112,6 +113,7 @@
     <ClInclude Include="Color.h" />
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="EscapeMenu.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GuiButton.h" />

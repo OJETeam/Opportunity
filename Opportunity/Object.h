@@ -21,7 +21,7 @@ public:
 	Vector2 parentPivot;
 	bool visible = true;
 
-	Object(Vector2 position, Model model);
+	Object(Vector2 position, Model model = Model()); //TODO probably remove Model from constructor
 
 	void UpdateModel();
 	float getX() const;

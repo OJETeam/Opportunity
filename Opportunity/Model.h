@@ -18,6 +18,7 @@ public:
 	Color color;
 	Vector2 pivot = Vector2(0, 0);
 
+	Model();
 	Model(vector<Vector2> model, Color color);
 	~Model();
 

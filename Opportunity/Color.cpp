@@ -7,6 +7,10 @@ const Color Color::White = Color(1, 1, 1);
 const Color Color::Black = Color(0, 0, 0);
 const Color Color::Transparent = Color(0, 0, 0, 0);
 
+Color::Color()
+{
+}
+
 Color::Color(float r, float g, float b, float a) : r(r), g(g), b(b), a(a)
 {	
 }
