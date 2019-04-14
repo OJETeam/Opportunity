@@ -8,9 +8,9 @@
 class Object
 {
 protected:
-	Vector2 position; //TODO maybe private (position, size, rotation)
+	Vector2 position; //TODO maybe private (position, scale, rotation)
 	unsigned int depth = 0;
-	Vector2 size = Vector2(1.0f, 1.0f);
+	Vector2 scale = Vector2(1.0f, 1.0f);
 	float rotation = 0;
 	Object* parent = nullptr;
 	vector<Object*> children;
