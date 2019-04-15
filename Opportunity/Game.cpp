@@ -4,6 +4,7 @@
 #include "Camera.h"
 #include "ScriptLibrary.h"
 #include "PivotVisualizer.h"
+#include "Input.h"
 
 //#define DEBUG_PIVOT
 
@@ -11,6 +12,7 @@ Scene* Game::loadedScene;
 
 void Game::Update()
 {
+	Input::Update();
 	loadedScene->Update();
 	Camera::Update(); //TODO add multiple cameras
 	ScriptLibrary::Update();

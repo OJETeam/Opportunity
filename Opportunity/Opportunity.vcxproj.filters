@@ -78,9 +78,6 @@
     <ClInclude Include="Time.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
     <ClInclude Include="Script.h">
       <Filter>Game</Filter>
     </ClInclude>
@@ -117,8 +114,15 @@
     <ClInclude Include="IGameScript.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="TestScene.h" />
-    <ClInclude Include="TestScript.h" />
+    <ClInclude Include="TestScript.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -171,9 +175,6 @@
     <ClCompile Include="Time.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
     <ClCompile Include="Script.cpp">
       <Filter>Game</Filter>
     </ClCompile>
@@ -210,8 +211,15 @@
     <ClCompile Include="IGameScript.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="TestScene.cpp" />
-    <ClCompile Include="TestScript.cpp" />
+    <ClCompile Include="TestScene.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScript.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fragment.frag">
