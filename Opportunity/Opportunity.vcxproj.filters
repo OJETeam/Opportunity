@@ -232,4 +232,7 @@
       <Filter>Test</Filter>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
 </Project>
