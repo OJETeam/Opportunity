@@ -5,7 +5,7 @@
 #include "Camera.h"
 #include "Window.h"
 
-GuiObject::GuiObject(Vector2 relativePosition, Model model) : Object(relativePosition, model)
+GuiObject::GuiObject(Vector2 relativePosition, Model model) : Object(relativePosition, model), clickable(false)
 {
 
 }

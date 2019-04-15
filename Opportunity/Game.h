@@ -7,22 +7,23 @@
 #include "Window.h"
 #include "GameObject.h"
 #include "GuiObject.h"
+#include "Scene.h"
+#include "IGameScript.h"
 
 class Game
 {
 private:
-	static vector<Object*> gameObjects;
-	static vector<Object*> guiObjects;
-	static map<Object*, bool> gameObjectsModifications;
-	static map<Object*, bool> guiObjectsModifications;
-	static bool updateDepth;
+	static Scene* loadedScene;
 public:
 	static void Update();
-	static void UpdateArray(vector<Object*>& objects, map<Object*, bool>& objectsModifications);
-	static void RenderObjects();
+	static void Render();
+	static void Start(Scene& scene, IGameScript& script);
+	static void LoadScene(Scene& scene);
 	static void AddObject(GameObject& object);
-	static void RemoveObject(GameObject& object);
+	static void RemoveObject(GameObject& object); //TODO too many proxy methods. Allow direct access to scene
 	static void AddObject(GuiObject& object);
 	static void RemoveObject(GuiObject& object);
+	static void AddScript(IGameScript& script);
+	static void RemoveScript(IGameScript& script);
 	static void UpdateDepth();
 };

@@ -4,10 +4,10 @@
 	(PIVOT)
 	(parent-child system)
 	(depth testing)
-	Scenes
-	GameScripts
-	Clicks
+	(Scenes)
+	(GameScripts)
 	Input
+	Clicks
 	gui
 		basic elements
 		text

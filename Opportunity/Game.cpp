@@ -5,92 +5,40 @@
 #include "ScriptLibrary.h"
 #include "PivotVisualizer.h"
 
-#define DEBUG_PIVOT
+//#define DEBUG_PIVOT
 
-vector<Object*> Game::gameObjects;
-vector<Object*> Game::guiObjects;
-map<Object*, bool> Game::gameObjectsModifications;
-map<Object*, bool> Game::guiObjectsModifications;
-bool Game::updateDepth = false;
+Scene* Game::loadedScene;
 
 void Game::Update()
 {
-	UpdateArray(gameObjects, gameObjectsModifications);
-	UpdateArray(guiObjects, guiObjectsModifications);
+	loadedScene->Update();
 	Camera::Update(); //TODO add multiple cameras
 	ScriptLibrary::Update();
 }
 
-void Game::UpdateArray(vector<Object*>& objects, map<Object*, bool>& objectsModifications)
+void Game::Render()
 {
-	for (auto modifiedObj : objectsModifications)
-	{
-		if (!modifiedObj.first)
-			continue;
-
-		if (modifiedObj.second)
-		{
-			bool contained = false;
-
-			for (Object* obj : objects)
-			{
-				if (obj == modifiedObj.first)
-					contained = true;
-			}
-			if (!contained)
-			{
-				updateDepth = true;
-				modifiedObj.first->OnCreate();
-				objects.push_back(modifiedObj.first);
-			}
-		}
-		else
-		{
-			for (int i = 0; i < objects.size(); i++)
-			{
-				if (objects[i] == modifiedObj.first)
-				{
-					objects[i]->OnDelete();
-					objects.erase(objects.begin() + i);
-					break;
-				}
-			}
-		}
-	}
-	objectsModifications.clear();
-
-	if (updateDepth)
-	{
-		sort(objects.begin(), objects.end(), [](const Object* first, const Object* second) -> bool { return first->getDepth() > second->getDepth(); });
-		updateDepth = false;
-	}
-
-	for (Object* obj : objects)
-	{
-		obj->Update();
-	}
+	loadedScene->RenderObjects();
 }
 
-void Game::RenderObjects()
+void Game::Start(Scene& scene, IGameScript& script)
 {
-	for (Object* obj : guiObjects)
-	{
-		if (obj->visible)
-			obj->Render();
-	}
-	for (Object* obj : gameObjects)
-	{
-		if (obj->visible)
-			obj->Render();
-	}
+	LoadScene(scene);
+	loadedScene->AddScript(script);
+}
+
+void Game::LoadScene(Scene& scene)
+{
+	if (loadedScene)
+		loadedScene->Unload();
+
+	loadedScene = &scene;
+	scene.Load();
 }
 
 void Game::AddObject(GameObject& object)
 {
-	if (!&object)
-		return;
-
-	gameObjectsModifications[&object] = true;
+	loadedScene->AddObject(object);
 
 #ifdef DEBUG_PIVOT
 	PivotVisualizer* pivotVisualizer = new PivotVisualizer(&object);
@@ -100,23 +48,30 @@ void Game::AddObject(GameObject& object)
 
 void Game::RemoveObject(GameObject& object)
 {
-	gameObjectsModifications[&object] = false;
+	loadedScene->RemoveObject(object);
 }
 
 void Game::AddObject(GuiObject& object)
 {
-	if (!&object)
-		return;
-
-	guiObjectsModifications[&object] = true;
+	loadedScene->AddObject(object);
 }
 
 void Game::RemoveObject(GuiObject& object)
 {
-	guiObjectsModifications[&object] = false;
+	loadedScene->RemoveObject(object);
+}
+
+void Game::AddScript(IGameScript& script)
+{
+	loadedScene->AddScript(script);
+}
+
+void Game::RemoveScript(IGameScript& script)
+{
+	loadedScene->RemoveScript(script);
 }
 
 void Game::UpdateDepth()
 {
-	updateDepth = true;
+	loadedScene->UpdateDepth();
 }

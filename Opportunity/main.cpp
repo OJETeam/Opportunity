@@ -2,19 +2,16 @@
 #include <glad/glad.h>
 #include "Window.h"
 #include "Game.h"
-#include "Model.h"
-#include "Object.h"
 #include "Cube.h"
 #include "AbstractScript.h"
-#include "Api.h"
-#include "ScriptLibrary.h"
-#include "Unit.h"
 #include "Time.h"
-#include "GuiButton.h"
+#include "TestScene.h"
+#include "TestScript.h"
 
 using namespace std;
 
-void InitTestObjects(); //TODO test
+Scene&& gameScene = TestScene(); //TODO move somewhere
+IGameScript&& gameScript = TestScript();
 
 __declspec(dllexport) void Run()
 {
@@ -28,11 +25,7 @@ __declspec(dllexport) void Run()
 	glClearColor(1, 0, 1, 1);
 	glEnable(GL_DEPTH_TEST);
 
-	InitTestObjects();
-
-	//GuiObject j = GuiObject(Vector2(9, 9), Model::Cube(50, Color::Blue, Vector2(0.5, 0.5)));
-	//j.SubscribeClick([]() mutable -> void {return; });
-
+	Game::Start(gameScene, gameScript);
 	Time::Start();
 	while (!Window::Exit)
 	{
@@ -40,43 +33,9 @@ __declspec(dllexport) void Run()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		Game::Update();
-		Game::RenderObjects();
+		Game::Render();
 		Window::PostRender();
 	}
 
 	Window::Terminate();
-}
-
-void InitTestObjects()
-{
-	AbstractScript testScript = AbstractScript::FromFile("Test", "Test.cs");
-	testScript.Compile();
-	ScriptLibrary::AddScript(&testScript);
-
-	Unit* test = new Unit(Vector2(200.0f, 200.0f), Model::Cube(50, Color::Blue, Vector2(0.5, 0.5)));
-	test->parentPivot = Vector2(13, 44);
-	test->setSize(Vector2(2.0f, 2.0f));
-	test->AttachScript(testScript, true);
-	Game::AddObject(*test);
-
-	Unit* test2 = new Unit(Vector2(150.0f, 200.0f), Model::Cube(30, Color::Green, Vector2(0.5, 0.5)));
-	test2->SetParent(*test, false);
-	test2->setDepth(1);
-	Game::AddObject(*test2);
-
-	Unit* test3 = new Unit(Vector2(250.0f, 200.0f), Model::Cube(30, Color::Green, Vector2(0.5, 0.5)));
-	test3->SetParent(*test, false);
-	test3->setDepth(1);
-	Game::AddObject(*test3);
-
-	Unit* test4 = new Unit(Vector2(200.0f, 250.0f), Model::Rectangle(Vector2(20, 40), Color::Green, Vector2(0.5, 0.5)));
-	test4->SetParent(*test, false);
-	test4->setDepth(1);
-	Game::AddObject(*test4);
-
-	Unit* center = new Unit(Vector2(0, 0), Model::Rectangle(Vector2(20, 20), Color::Red, Vector2(0.5, 0.5)));
-	Game::AddObject(*center);
-
-	/*GuiButton* obj = new GuiButton(Vector2(0.5, 0), Vector2(0.5, 0.1), Color(0.5, 0.5, 0), Vector2(0, 0));
-	Game::AddObject(*obj);*/
 }
