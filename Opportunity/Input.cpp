@@ -1,30 +1,40 @@
 #include "Input.h"
 
-bool Input::mouseButttonsPrev[3];
-MouseButtonState Input::mouseButtons[3];
+Input::ButtonState Input::mouseButtons[mouseButtonCount];
 
-bool Input::KeyPressed(int key)
+void Input::Start()
 {
-	return glfwGetKey(Window::window, key) == GLFW_PRESS;
+	glfwSetKeyCallback(Window::window, KeyCallback);
 }
 
-MouseButtonState Input::GetMouseButtonState(MouseButtons mouseButton)
+Input::ButtonState Input::GetKeyState(unsigned int key)
+{
+	return keys[key];
+}
+
+bool Input::IsKeyPressed(unsigned int key)
+{
+	return keys[key] == ButtonState::Pressed;
+}
+
+bool Input::IsKeyHeld(unsigned int key)
+{
+	return keys[key] == ButtonState::Pressed || keys[key] == ButtonState::Held;
+}
+
+bool Input::IsKeyReleased(unsigned int key)
+{
+	return keys[key] == ButtonState::Released;
+}
+
+Input::ButtonState Input::GetMouseButtonState(unsigned int mouseButton)
 {
 	return mouseButtons[mouseButton];
 }
 
-void Input::Update()
+void Input::KeyCallback(GLFWwindow* window, int key, int scanCode, int action, int mods)
 {
-	for (int i = 0; i < 3; ++i)
-	{
-		bool mouseButtonsCurrent = glfwGetMouseButton(Window::window, i) == GLFW_PRESS;
-		if (mouseButtonsCurrent)
-			if (!mouseButttonsPrev[i])
-				mouseButtons[i] = MouseButtonState::Clicked;
-			else
-				mouseButtons[i] = MouseButtonState::Pressed;
-		else
-			mouseButtons[i] = MouseButtonState::Released;
-		mouseButttonsPrev[i] = mouseButtonsCurrent;
-	}
+	if (key == GLFW_KEY_UNKNOWN) return;
+
+	keys[key] = static_cast<ButtonState>(action);
 }

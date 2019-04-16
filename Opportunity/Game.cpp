@@ -12,7 +12,6 @@ Scene* Game::loadedScene;
 
 void Game::Update()
 {
-	Input::Update();
 	loadedScene->Update();
 	Camera::Update(); //TODO add multiple cameras
 	ScriptLibrary::Update();
@@ -25,6 +24,7 @@ void Game::Render()
 
 void Game::Start(Scene& scene, IGameScript& script)
 {
+	Input::Start();
 	LoadScene(scene);
 	loadedScene->AddScript(script);
 }
