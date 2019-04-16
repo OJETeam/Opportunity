@@ -29,6 +29,7 @@ private:
 	static ButtonState mouseButtons[mouseButtonCount];
 
 	static void KeyCallback(GLFWwindow* window, int key, int scanCode, int action, int mods);
+	static void MouseButtonCallback(GLFWwindow* window, int mouseButton, int action, int mods);
 public:
 	static void Start();
 	static ButtonState GetKeyState(unsigned int key); //TODO create an enum for all glfw keys
@@ -36,4 +37,7 @@ public:
 	static bool IsKeyHeld(unsigned int key);
 	static bool IsKeyReleased(unsigned int key);
 	static ButtonState GetMouseButtonState(unsigned int mouseButton);
+	static bool IsMouseButtonPressed(unsigned int mouseButton);
+	static bool IsMouseButtonHeld(unsigned int mouseButton);
+	static bool IsMouseButtonReleased(unsigned int mouseButton);
 };
