@@ -1,5 +1,6 @@
 #include <iostream>
 #include <glad/glad.h>
+#include <chrono>
 #include "Window.h"
 #include "Game.h"
 #include "Cube.h"

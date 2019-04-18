@@ -1,6 +1,7 @@
 #include "TestScript.h"
 #include "Game.h"
 #include "TestScene.h"
+#include "Input.h"
 
 TestScript::TestScript()
 {
@@ -13,9 +14,9 @@ void TestScript::Start()
 
 void TestScript::Update()
 {
-	if (glfwGetKey(Window::window, GLFW_KEY_A))
+	if (Input::IsKeyClicked(GLFW_KEY_A))
 	{
-		cout << "fuck";
+		cout << "fuck" << endl;
 		TestScene* test = new TestScene();
 		Game::LoadScene(*test);
 	}

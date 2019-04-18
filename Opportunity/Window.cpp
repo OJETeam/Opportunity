@@ -26,7 +26,9 @@ void Window::Init()
 		cout << "Failed to create GLFW window" << endl;
 	else
 		cout << "Created GLFW window" << endl;
+
 	glfwMakeContextCurrent(window);
+	//glfwSwapInterval(0);
 	projectionMatrix = glm::ortho(0.0f, (float)width, 0.0f, (float)height, 0.0f, 1.0f);
 	guiProjectionMatrix = glm::ortho(0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f);
 }
@@ -40,7 +42,7 @@ void Window::PostRender()
 {
 	if (glfwWindowShouldClose(window))
 		Exit = true;
-
+	cout << "shiet" << endl;
 	glfwSwapBuffers(window);
 	glfwPollEvents();
 }

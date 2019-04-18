@@ -15,6 +15,7 @@ void Game::Update()
 	loadedScene->Update();
 	Camera::Update(); //TODO add multiple cameras
 	ScriptLibrary::Update();
+	Input::Update();
 }
 
 void Game::Render()
