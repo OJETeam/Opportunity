@@ -6,7 +6,7 @@
 	(depth testing)
 	(Scenes)
 	(GameScripts)
-	Input
+	(Input)
 	Colliders
 	Clicks
 	gui

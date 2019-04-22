@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClCompile Include="Api.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="EscapeMenu.cpp" />
@@ -114,6 +115,7 @@
   <ItemGroup>
     <ClInclude Include="Api.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Cube.h" />
     <ClInclude Include="EscapeMenu.h" />

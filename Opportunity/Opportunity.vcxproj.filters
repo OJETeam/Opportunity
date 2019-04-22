@@ -28,6 +28,9 @@
     <Filter Include="Engine\GUI">
       <UniqueIdentifier>{c3cbe8db-1273-4415-b26a-7f308ff82d65}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Colliders">
+      <UniqueIdentifier>{0dd50132-8d08-4cf0-8f56-22681f514ff7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cube.h">
@@ -117,6 +120,7 @@
     <ClInclude Include="Camera.h">
       <Filter>Engine\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="Collider.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -208,6 +212,7 @@
     <ClCompile Include="Camera.cpp">
       <Filter>Engine\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Collider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fragment.frag">
