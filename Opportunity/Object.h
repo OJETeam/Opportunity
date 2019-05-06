@@ -4,6 +4,7 @@
 #include "Vector2.h"
 #include "Texture.h"
 #include "ShaderProgram.h"
+#include "Collider.h"
 
 class Object
 {
@@ -17,6 +18,7 @@ protected:
 	unsigned int vao, vbo;
 public:
 	Model model;
+	Collider collider;
 	ShaderProgram shader;
 	Vector2 parentPivot;
 	bool visible = true;
