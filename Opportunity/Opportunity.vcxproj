@@ -100,6 +100,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PivotVisualizer.cpp" />
     <ClCompile Include="AbstractScript.cpp" />
+    <ClCompile Include="PolyCollider.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Script.cpp" />
     <ClCompile Include="ScriptLibrary.cpp" />
@@ -132,6 +133,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="PivotVisualizer.h" />
     <ClInclude Include="AbstractScript.h" />
+    <ClInclude Include="PolyCollider.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Script.h" />
     <ClInclude Include="ScriptLibrary.h" />

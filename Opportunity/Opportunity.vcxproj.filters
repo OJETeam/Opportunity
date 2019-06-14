@@ -121,8 +121,9 @@
       <Filter>Engine\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Collider.h">
-      <Filter>Engine</Filter>
+      <Filter>Engine\Colliders</Filter>
     </ClInclude>
+    <ClInclude Include="PolyCollider.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -215,8 +216,9 @@
       <Filter>Engine\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Collider.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Engine\Colliders</Filter>
     </ClCompile>
+    <ClCompile Include="PolyCollider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fragment.frag">
