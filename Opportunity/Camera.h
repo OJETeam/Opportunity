@@ -7,11 +7,18 @@
 
 class Camera
 {
+private:
+	static Vector2 position;
+	static float scale;
 public:
 	static glm::mat4 viewMatrix;
-	static float speed;
+	static float moveSpeed;
+	static float scaleSpeed;
 
-	static void MoveBy(Vector2 delta);
-	static void MoveTo(Vector2 pos);
+	static void recalculateMatrix();
+	static Vector2 getPosition();
+	static void setPosition(const Vector2& position);
+	static float getScale();
+	static void setScale(float scale);
 	static void Update();
 };

@@ -3,32 +3,65 @@
 #include "Time.h"
 
 glm::mat4 Camera::viewMatrix = glm::mat4(1.0f);
-float Camera::speed = 500;
+Vector2 Camera::position = Vector2(0, 0);
+float Camera::scale = 1.0f;
+float Camera::moveSpeed = 500;
+float Camera::scaleSpeed = 1;
 
-void Camera::MoveBy(Vector2 delta)
+void Camera::recalculateMatrix()
 {
-	viewMatrix = glm::translate(viewMatrix, glm::vec3(-delta.x, -delta.y, 0));
+	viewMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(scale, scale, 0));
+	viewMatrix = glm::translate(viewMatrix, glm::vec3(-position.x, -position.y, 0));
 }
 
-void Camera::MoveTo(Vector2 pos)
+Vector2 Camera::getPosition()
 {
-	viewMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(-pos.x, -pos.y, 0));
+	return position;
+}
+
+void Camera::setPosition(const Vector2& position)
+{
+	Camera::position = position;
+
+	recalculateMatrix();
+}
+
+float Camera::getScale()
+{
+	return scale;
+}
+
+void Camera::setScale(float scale)
+{
+	Camera::scale = scale;
+
+	recalculateMatrix();
 }
 
 void Camera::Update()
 {
-	const float delta = speed * Time::DeltaTime();
-	Vector2 movement = Vector2(0, 0);
+	const float deltaMovement = moveSpeed * Time::DeltaTime();
+	Vector2 movement = position;
 
 	if (glfwGetKey(Window::window, GLFW_KEY_UP) == GLFW_PRESS) //TODO migrate to input system
-		movement.y += delta;
+		movement.y += deltaMovement;
 	else if (glfwGetKey(Window::window, GLFW_KEY_DOWN) == GLFW_PRESS)
-		movement.y -= delta;
+		movement.y -= deltaMovement;
 
 	if (glfwGetKey(Window::window, GLFW_KEY_RIGHT) == GLFW_PRESS)
-		movement.x += delta;
+		movement.x += deltaMovement;
 	else if (glfwGetKey(Window::window, GLFW_KEY_LEFT) == GLFW_PRESS)
-		movement.x -= delta;
+		movement.x -= deltaMovement;
 
-	MoveBy(movement);
+	setPosition(movement);
+
+	const float deltaScale = scaleSpeed * Time::DeltaTime();
+	float newScale = scale;
+
+	if (glfwGetKey(Window::window, GLFW_KEY_EQUAL) == GLFW_PRESS)
+		newScale += deltaScale;
+	else if (glfwGetKey(Window::window, GLFW_KEY_MINUS) == GLFW_PRESS)
+		newScale -= deltaScale;
+
+	setScale(newScale);
 }

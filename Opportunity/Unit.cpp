@@ -40,7 +40,7 @@ float Unit::GetSpeed() const
 
 void Unit::SetSpeed(float speed)
 {
-	this->speed = speed; //TODO speed limit
+	this->speed = speed; //TODO moveSpeed limit
 }
 
 float Unit::GetRotationSpeed() const
@@ -50,5 +50,5 @@ float Unit::GetRotationSpeed() const
 
 void Unit::SetRotationSpeed(float rotationSpeed)
 {
-	this->rotationSpeed = rotationSpeed; //TODO speed limit
+	this->rotationSpeed = rotationSpeed; //TODO moveSpeed limit
 }

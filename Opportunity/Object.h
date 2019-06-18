@@ -18,7 +18,7 @@ protected:
 	unsigned int vao, vbo;
 public:
 	Model model;
-	Collider collider;
+	Collider* collider;
 	ShaderProgram shader;
 	Vector2 parentPivot;
 	bool visible = true;

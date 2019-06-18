@@ -5,12 +5,10 @@
 
 TestScene::TestScene()
 {
-
 }
 
 TestScene::~TestScene()
 {
-
 }
 
 void TestScene::Load()

@@ -42,7 +42,7 @@ void Window::PostRender()
 {
 	if (glfwWindowShouldClose(window))
 		Exit = true;
-	cout << "shiet" << endl;
+
 	glfwSwapBuffers(window);
 	glfwPollEvents();
 }
