@@ -10,8 +10,14 @@ float Camera::scaleSpeed = 1;
 
 void Camera::recalculateMatrix()
 {
-	viewMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(scale, scale, 0));
-	viewMatrix = glm::translate(viewMatrix, glm::vec3(-position.x, -position.y, 0));
+	glm::mat4 mat = glm::mat4(1.0f);
+
+	mat = glm::translate(mat, glm::vec3((float)Window::width / 2, (float)Window::height / 2, 0));
+	mat = glm::scale(mat, glm::vec3(scale, scale, 0));
+	mat = glm::translate(mat, glm::vec3(-position.x, -position.y, 0));
+	mat = glm::translate(mat, glm::vec3(-(float)Window::width / 2, -(float)Window::height / 2, 0));
+
+	viewMatrix = mat;
 }
 
 Vector2 Camera::getPosition()
@@ -40,7 +46,7 @@ void Camera::setScale(float scale)
 
 void Camera::Update()
 {
-	const float deltaMovement = moveSpeed * Time::DeltaTime();
+	const float deltaMovement = (moveSpeed * Time::DeltaTime()) / scale;
 	Vector2 movement = position;
 
 	if (glfwGetKey(Window::window, GLFW_KEY_UP) == GLFW_PRESS) //TODO migrate to input system
@@ -55,7 +61,7 @@ void Camera::Update()
 
 	setPosition(movement);
 
-	const float deltaScale = scaleSpeed * Time::DeltaTime();
+	const float deltaScale = (scaleSpeed * Time::DeltaTime()) * scale;
 	float newScale = scale;
 
 	if (glfwGetKey(Window::window, GLFW_KEY_EQUAL) == GLFW_PRESS)
