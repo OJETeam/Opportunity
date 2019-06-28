@@ -6,9 +6,11 @@ using namespace  std;
 
 class Collider
 {
+private:
+	virtual bool CheckCollision(const Collider& collider, bool& available) const = 0;
 public:
 	Collider();
 	~Collider();
 
-	virtual bool IsColliding(Collider& collider) = 0;
+	bool IsColliding(const Collider& collider) const;
 };
