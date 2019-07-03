@@ -16,6 +16,9 @@ protected:
 	Object* parent = nullptr;
 	vector<Object*> children;
 	unsigned int vao, vbo;
+	glm::mat4 modelMatrix;
+
+	void UpdateTransform(); //TODO Possible bad code
 public:
 	Model model;
 	Collider* collider;

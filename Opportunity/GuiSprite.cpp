@@ -4,3 +4,7 @@ GuiSprite::GuiSprite(Vector2 position, Vector2 size, Color color, Vector2 relati
 {
 
 }
+
+void GuiSprite::Update()
+{
+}

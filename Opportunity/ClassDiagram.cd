@@ -8,21 +8,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AbstractScript" Collapsed="true">
-    <Position X="17" Y="0.5" Width="1.5" />
+    <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAIAAAAAAAAEAAAAAAEAEAMAAAAAAAAAkA=</HashCode>
       <FileName>AbstractScript.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Script" Collapsed="true">
-    <Position X="18.75" Y="1.5" Width="1.5" />
+    <Position X="16.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAACAgAAAAAAAAAgAAAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Script.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ScriptLibrary" Collapsed="true">
-    <Position X="20.5" Y="1.5" Width="1.5" />
+    <Position X="18.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAACAAAAAAAQAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>ScriptLibrary.h</FileName>
@@ -43,14 +43,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Game" Collapsed="true">
-    <Position X="20.5" Y="0.5" Width="1.5" />
+    <Position X="18.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAACAAACAAAQAAAAAACAAABCAAAAAgABAAAAAAAAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameObject" Collapsed="true">
-    <Position X="11.25" Y="1.75" Width="1.5" />
+    <Position X="10" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAYAAAA=</HashCode>
       <FileName>GameObject.h</FileName>
@@ -64,16 +64,16 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Input" Collapsed="true">
-    <Position X="22.25" Y="0.5" Width="1.5" />
+    <Position X="20" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AARAAAAAAABAAAAAAAAAAAAAAAAAAAAAABAAAABAAAA=</HashCode>
+      <HashCode>QERABAAEACAKAAAAAAQAAAgAAAiAAAAAADAAACAgQAA=</HashCode>
       <FileName>Input.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Object" Collapsed="true">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAIIAACIAAAExgIACAIAACCCAAAABACBAAKGAIAAA=</HashCode>
+      <HashCode>AAQAIIAACIAAAExgIACAIAACCCAEAABACBAAOGAIAAA=</HashCode>
       <FileName>Object.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -85,49 +85,49 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Time" Collapsed="true">
-    <Position X="18.75" Y="2.5" Width="1.5" />
+    <Position X="16.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAgAAACAAAAABAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>Time.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ShaderProgram" Collapsed="true">
-    <Position X="22.25" Y="1.5" Width="1.5" />
+    <Position X="20" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAACAAAAAAAAAAAAAAAAEEAAAAAAAFAAAsAAA=</HashCode>
       <FileName>ShaderProgram.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Texture" Collapsed="true">
-    <Position X="17" Y="2.5" Width="1.5" />
+    <Position X="14.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>Texture.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Window" Collapsed="true">
-    <Position X="22.25" Y="2.5" Width="1.5" />
+    <Position X="20" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQCAAAAQAQCAAAAAAAAAAAAAIIAAGIAACAAA=</HashCode>
       <FileName>Window.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Camera" Collapsed="true">
-    <Position X="18.75" Y="0.5" Width="1.5" />
+    <Position X="16.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAgAAAAAIAQAAAAAAAAAAIAA=</HashCode>
+      <HashCode>AAQAIAAAEAAAAAAAAAAAIgACAAAgAAACAAAAAAAQEAA=</HashCode>
       <FileName>Camera.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Model" Collapsed="true">
-    <Position X="17" Y="1.5" Width="1.5" />
+    <Position X="14.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAgBAAAAAAAAAAAAAAAAAAgAACAAAgAAAAIAAA=</HashCode>
       <FileName>Model.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Vector2" Collapsed="true">
-    <Position X="20.5" Y="2.5" Width="1.5" />
+    <Position X="18.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAARAAAAAEAIAQAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>Vector2.h</FileName>
@@ -157,7 +157,7 @@
   <Class Name="GuiSprite" Collapsed="true">
     <Position X="3.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GuiSprite.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -190,28 +190,28 @@
     </TypeIdentifier>
   </Class>
   <Struct Name="Color" Collapsed="true">
-    <Position X="17" Y="3.75" Width="1.5" />
+    <Position X="14.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAGAEAAAAAAAgAAAAAAAAAABAAAAAAoAQAhgBAAAAA=</HashCode>
       <FileName>Color.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Typedef Name="ClickEvent" Collapsed="true">
-    <Position X="17" Y="6" Width="1.5" />
+    <Position X="14.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GuiObject.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="PFNWGLGETPROCADDRESSPROC_PRIVATE" Collapsed="true">
-    <Position X="20.5" Y="6" Width="1.5" />
+    <Position X="18.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>glad.c</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="PFNGLXGETPROCADDRESSPROC_PRIVATE" Collapsed="true">
-    <Position X="18.75" Y="6" Width="1.5" />
+    <Position X="16.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>glad.c</FileName>

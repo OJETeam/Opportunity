@@ -2,6 +2,8 @@
 #include "Unit.h"
 #include "ScriptLibrary.h"
 #include "Game.h"
+#include "GuiSprite.h"
+#include "PolyCollider.h"
 
 TestScene::TestScene()
 {
@@ -20,7 +22,8 @@ void TestScene::Load()
 	Unit* test = new Unit(Vector2(200.0f, 200.0f), Model::Cube(50, Color::Blue, Vector2(0.5, 0.5)));
 	test->parentPivot = Vector2(13, 44);
 	test->setSize(Vector2(2.0f, 2.0f));
-	test->AttachScript(testScript, true);
+	//test->AttachScript(testScript, true);
+	test->collider = new PolyCollider(test->model.model);
 	AddObject(*test);
 
 	Unit* test2 = new Unit(Vector2(150.0f, 200.0f), Model::Cube(30, Color::Green, Vector2(0.5, 0.5)));
@@ -38,8 +41,14 @@ void TestScene::Load()
 	test4->setDepth(1);
 	AddObject(*test4);
 
+	test->setPosition(Vector2(200.0f, 200.0f));
+	test->setRotation(glm::pi<float>() / 3);
+
 	Unit* center = new Unit(Vector2(0, 0), Model::Rectangle(Vector2(20, 20), Color::Red, Vector2(0.5, 0.5)));
 	AddObject(*center);
+
+	GuiSprite* testSprite = new GuiSprite(Vector2(0.5, 0), Vector2(0.5, 0.1), Color::Blue, Vector2(0, 0));
+	AddObject(*testSprite);
 }
 
 void TestScene::Unload()

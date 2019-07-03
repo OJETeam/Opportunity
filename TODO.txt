@@ -30,3 +30,4 @@
 [IDEAS]
 	Implement unit that can move in any direction, not only relative to its rotation
 	Transform class like in Unity3D?
+	SWITCH ENGINE TO COMPONENT SYSTEM?

@@ -1,17 +1,17 @@
-#include "Object.h"
-#include "Window.h"
-#include "Camera.h"
-
 #include <glad/glad.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include "Game.h"
+#include "Object.h"
+#include "Window.h"
+#include "Camera.h"
 
-Object::Object(Vector2 position, Model model) : model(model), position(position), shader("vertex.vert", "fragment.frag", "")
+Object::Object(Vector2 position, Model model) : position(position), model(model), collider(nullptr), shader("vertex.vert", "fragment.frag", "")
 {
 	parent = nullptr;
 	glGenVertexArrays(1, &vao);
 	glGenBuffers(1, &vbo);
+
 	UpdateModel();
 }
 
@@ -60,6 +60,8 @@ void Object::setPosition(Vector2 position)
 	}
 
 	this->position = position;
+
+	UpdateTransform();
 }
 
 Vector2 Object::getSize() const
@@ -71,6 +73,8 @@ void Object::setSize(Vector2 scale)
 {
 	//TODO parent
 	this->scale = scale;
+
+	UpdateTransform();
 }
 
 float Object::getRotation() const
@@ -78,7 +82,7 @@ float Object::getRotation() const
 	return rotation;
 }
 
-void Object::setRotation(float rotation)
+void Object::setRotation(float rotation) //TODO switch from delta rotation to absolute rotation
 {
 	if (!children.empty())
 	{
@@ -96,6 +100,8 @@ void Object::setRotation(float rotation)
 	}
 
 	this->rotation = rotation;
+
+	UpdateTransform();
 }
 
 unsigned int Object::getDepth() const
@@ -107,6 +113,18 @@ void Object::setDepth(unsigned int depth)
 {
 	this->depth = depth;
 	Game::UpdateDepth();
+}
+
+void Object::UpdateTransform()
+{
+	modelMatrix = glm::mat4(1.0f);
+	modelMatrix = glm::translate(modelMatrix, glm::vec3(position.x, position.y, 0));
+	modelMatrix = glm::scale(modelMatrix, glm::vec3(scale.x, scale.y, 1.0f));
+	modelMatrix = glm::rotate(modelMatrix, rotation, glm::vec3(0, 0, 1));
+	modelMatrix = glm::translate(modelMatrix, glm::vec3(-model.pivot.x, -model.pivot.y, 0));
+
+	if (collider)
+		collider->Update(modelMatrix);
 }
 
 void Object::OnCreate()
