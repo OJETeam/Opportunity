@@ -4,6 +4,8 @@
 #include <glm/glm.hpp>
 
 #include "Window.h"
+#include "Vector2.h"
+#include "Object.h"
 
 using namespace std;
 
@@ -32,6 +34,9 @@ private:
 	static ButtonState mouseButtons[mouseButtonCount];
 	static bool updateKeys;
 	static bool updateMouseButtons;
+	static Object* mouseOverObject;
+
+	static bool CheckObjectMouseCollision(Object* obj, Vector2 mousePos);
 
 	static void KeyCallback(GLFWwindow* window, int key, int scanCode, int action, int mods);
 	static void MouseButtonCallback(GLFWwindow* window, int mouseButton, int action, int mods);
@@ -43,6 +48,7 @@ public:
 	static bool IsKeyHeld(unsigned int key);
 	static bool IsKeyReleased(unsigned int key);
 	static bool IsKeyClicked(unsigned int key);
+	static Vector2 GetMousePosition();
 	static ButtonState GetMouseButtonState(unsigned int mouseButton);
 	static bool IsMouseButtonPressed(unsigned int mouseButton);
 	static bool IsMouseButtonHeld(unsigned int mouseButton);

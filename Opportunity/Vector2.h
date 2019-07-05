@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 //TODO make template and typedef Vector2<float> Vector2
 
@@ -22,4 +23,5 @@ public:
 	Vector2 normalize(float length = 1) const;
 	float dot(Vector2 second) const;
 	Vector2 lookAt(Vector2 direction) const;
+	std::string to_string() const;
 };

@@ -20,10 +20,9 @@ void TestScene::Load()
 	ScriptLibrary::AddScript(&testScript);
 
 	Unit* test = new Unit(Vector2(200.0f, 200.0f), Model::Cube(50, Color::Blue, Vector2(0.5, 0.5)));
-	test->parentPivot = Vector2(13, 44);
 	test->setSize(Vector2(2.0f, 2.0f));
 	//test->AttachScript(testScript, true);
-	test->collider = new PolyCollider(test->model.model);
+	test->collider = PolyCollider::Cube(50.0f);
 	AddObject(*test);
 
 	Unit* test2 = new Unit(Vector2(150.0f, 200.0f), Model::Cube(30, Color::Green, Vector2(0.5, 0.5)));

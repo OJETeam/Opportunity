@@ -8,6 +8,7 @@
 	(GameScripts)
 	(Input)
 	Colliders
+	Camera::screenToWorld and all much conversions
 	Clicks
 	gui
 		basic elements
@@ -18,14 +19,16 @@
 	parent-child size updating
 	Pivot for parent???????
 	coroutines, timed invokes
+	AABB for colliders on clicks and collisions
 	 
 [FIX]
 	Window resize
 	UpdateModel
-	Check all TODO comments
+	Check all TODO comments (after first prototype)
 	add RemoveParent function
 	Creating objects. Objects created locally are deleted. Manipulating them using solely pointers is inconvenient
 	SORT FILES TO FOLDERS
+	fix the damn naming convention. Stop calling funtions in random styles
 
 [IDEAS]
 	Implement unit that can move in any direction, not only relative to its rotation

@@ -1,5 +1,6 @@
 #pragma once
 #include <map>
+#include <vector>
 #include <algorithm>
 #include "GameObject.h"
 #include "GuiObject.h"
@@ -36,4 +37,9 @@ public:
 	void AddScript(IGameScript& script);
 	void RemoveScript(IGameScript& script);
 	void UpdateDepth();
+
+	vector<Object*>::const_iterator gameObjectsBegin();
+	vector<Object*>::const_iterator gameObjectsEnd();
+	vector<Object*>::const_iterator guiObjectsBegin();
+	vector<Object*>::const_iterator guiObjectsEnd();
 };

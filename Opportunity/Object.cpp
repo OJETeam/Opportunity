@@ -15,6 +15,10 @@ Object::Object(Vector2 position, Model model) : position(position), model(model)
 	UpdateModel();
 }
 
+Object::~Object()
+{
+}
+
 void Object::UpdateModel()
 {
 	if (model.model.empty())
@@ -132,5 +136,50 @@ void Object::OnCreate()
 }
 
 void Object::OnDelete()
+{
+}
+Color _color;
+void Object::OnMouseEnter()
+{
+	_color = model.color;
+	model.color = Color(1, 1, 0);
+	cout << "enter" << endl;
+}
+
+void Object::OnMouseOver()
+{
+}
+
+void Object::OnMouseExit()
+{
+	model.color = _color;
+	cout << "exit" << endl;
+}
+
+void Object::OnMousePressed(unsigned mouseButton)
+{
+}
+
+void Object::OnMouseHeld(unsigned mouseButton)
+{
+}
+
+void Object::OnMouseReleased(unsigned mouseButton)
+{
+}
+
+void Object::OnMouseClicked(unsigned mouseButton)
+{
+}
+
+void Object::OnCollisionEnter(Object& obj)
+{
+}
+
+void Object::OnCollisionExit(Object& obj)
+{
+}
+
+void Object::OnCollisionStay(Object& obj)
 {
 }

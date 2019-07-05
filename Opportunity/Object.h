@@ -1,10 +1,12 @@
 #pragma once
-
+#include <memory>
 #include "Model.h"
 #include "Vector2.h"
 #include "Texture.h"
 #include "ShaderProgram.h"
 #include "Collider.h"
+
+using namespace std;
 
 class Object
 {
@@ -16,17 +18,18 @@ protected:
 	Object* parent = nullptr;
 	vector<Object*> children;
 	unsigned int vao, vbo;
-	glm::mat4 modelMatrix;
+	mat4 modelMatrix;
 
-	void UpdateTransform(); //TODO Possible bad code
+	void UpdateTransform(); //TODO Possibly bad code
 public:
 	Model model;
-	Collider* collider;
+	unique_ptr<Collider> collider; //TODO this is why i should switch to component system
 	ShaderProgram shader;
-	Vector2 parentPivot;
+	Vector2 parentPivot; //TODO finish
 	bool visible = true;
 
 	Object(Vector2 position, Model model = Model()); //TODO probably remove Model from constructor
+	virtual ~Object();
 
 	void UpdateModel();
 	float getX() const;
@@ -45,14 +48,15 @@ public:
 	virtual void OnCreate();
 	virtual void OnDelete();
 
-	/*bool isColliding(Object& obj) const;
-	virtual void onCollisionEnter(Object& obj);
-	virtual void onCollisionExit(Object& obj);
-	virtual void onCollisionStay(Object& obj);
-	virtual void onDelete();
-	Vector2 getPosition() const;
-	Vector2 getSize() const;
-	float getX() const;
-	float getY() const;
-	void setPosition(Vector2 newPosition);*/
+	virtual void OnMouseEnter();
+	virtual void OnMouseOver();
+	virtual void OnMouseExit();
+	virtual void OnMousePressed(unsigned int mouseButton);
+	virtual void OnMouseHeld(unsigned int mouseButton);
+	virtual void OnMouseReleased(unsigned int mouseButton);
+	virtual void OnMouseClicked(unsigned int mouseButton);
+
+	virtual void OnCollisionEnter(Object& obj);
+	virtual void OnCollisionExit(Object& obj);
+	virtual void OnCollisionStay(Object& obj);
 };

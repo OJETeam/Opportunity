@@ -1,5 +1,4 @@
 #include <algorithm>
-
 #include "Game.h"
 #include "Camera.h"
 #include "ScriptLibrary.h"
@@ -37,6 +36,11 @@ void Game::LoadScene(Scene& scene)
 
 	loadedScene = &scene;
 	scene.Load();
+}
+
+Scene* Game::GetScene()
+{
+	return loadedScene;
 }
 
 void Game::AddObject(GameObject& object)

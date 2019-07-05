@@ -74,3 +74,8 @@ Vector2 Vector2::lookAt(Vector2 direction) const
 {
 	return (direction - *this).normalize();
 }
+
+std::string Vector2::to_string() const
+{
+	return "(" + std::to_string(x) + "; " + std::to_string(y) + ")";
+}

@@ -19,6 +19,7 @@ public:
 	static void Render();
 	static void Start(Scene& scene, IGameScript& script);
 	static void LoadScene(Scene& scene);
+	static Scene* GetScene();
 	static void AddObject(GameObject& object);
 	static void RemoveObject(GameObject& object); //TODO too many proxy methods. Allow direct access to scene
 	static void AddObject(GuiObject& object);

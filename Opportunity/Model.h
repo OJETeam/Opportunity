@@ -22,6 +22,6 @@ public:
 	Model(vector<Vector2> model, Color color);
 	~Model();
 
-	static Model Cube(float sideLength, Color color, Vector2 relativePivot);
-	static Model Rectangle(Vector2 size, Color color, Vector2 relativePivot);
+	static Model Cube(float sideLength, Color color, Vector2 relativePivot = Vector2(0, 0));
+	static Model Rectangle(Vector2 size, Color color, Vector2 relativePivot = Vector2(0, 0));
 };

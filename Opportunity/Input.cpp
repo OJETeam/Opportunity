@@ -1,9 +1,11 @@
 #include "Input.h"
+#include "Game.h"
 
 Input::ButtonState Input::keys[keyCount];
 Input::ButtonState Input::mouseButtons[mouseButtonCount];
 bool Input::updateKeys = false;
 bool Input::updateMouseButtons = false;
+Object* Input::mouseOverObject = nullptr;
 
 void Input::Start()
 {
@@ -35,6 +37,57 @@ void Input::Update()
 		}
 		updateMouseButtons = false;
 	}
+
+	Vector2 mousePos = GetMousePosition();
+	Vector2 mousePosTransformed = Vector2(mousePos.x, (float)Window::height - mousePos.y);
+	bool isObjectFound = false;
+
+	for (auto i = Game::GetScene()->guiObjectsEnd(); i != Game::GetScene()->guiObjectsBegin(); ) //reverse iterator hack
+	{
+		--i;
+
+		if (CheckObjectMouseCollision(*i, mousePosTransformed))
+			isObjectFound = true;
+	}
+
+	for (auto i = Game::GetScene()->gameObjectsEnd(); i != Game::GetScene()->gameObjectsBegin(); )
+	{
+		--i;
+
+		if (CheckObjectMouseCollision(*i, mousePosTransformed))
+			isObjectFound = true;
+	}
+
+	if (!isObjectFound && mouseOverObject != nullptr)
+	{
+		mouseOverObject->OnMouseExit();
+		mouseOverObject = nullptr;
+	}
+}
+
+bool Input::CheckObjectMouseCollision(Object* obj, Vector2 mousePos)
+{
+	if (obj->collider == nullptr)
+		return false;
+
+	if (obj->collider->InCollider(mousePos))
+	{
+		if (mouseOverObject == obj)
+		{
+			obj->OnMouseOver();
+			return true;
+		}
+
+		if (mouseOverObject != nullptr)
+			mouseOverObject->OnMouseExit();
+
+		obj->OnMouseEnter();
+		mouseOverObject = obj;
+
+		return true;
+	}
+
+	return false;
 }
 
 Input::ButtonState Input::GetKeyState(unsigned int key)
@@ -60,6 +113,14 @@ bool Input::IsKeyReleased(unsigned int key)
 bool Input::IsKeyClicked(unsigned key)
 {
 	return keys[key] == ButtonState::Clicked;
+}
+
+Vector2 Input::GetMousePosition()
+{
+	double x, y;
+	glfwGetCursorPos(Window::window, &x, &y);
+
+	return Vector2((float)x, (float)y);
 }
 
 Input::ButtonState Input::GetMouseButtonState(unsigned int mouseButton)

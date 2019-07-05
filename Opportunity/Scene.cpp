@@ -96,7 +96,7 @@ void Scene::UpdateArray(vector<Object*>& objects, map<Object*, bool>& objectsMod
 
 	if (updateDepth)
 	{
-		sort(objects.begin(), objects.end(), [](const Object * first, const Object * second) -> bool { return first->getDepth() > second->getDepth(); });
+		sort(objects.begin(), objects.end(), [](const Object* first, const Object* second) -> bool { return first->getDepth() > second->getDepth(); });
 		updateDepth = false;
 	}
 
@@ -158,4 +158,24 @@ void Scene::RemoveScript(IGameScript& script)
 void Scene::UpdateDepth()
 {
 	updateDepth = true;
+}
+
+vector<Object*>::const_iterator Scene::gameObjectsBegin()
+{
+	return gameObjects.cbegin();
+}
+
+vector<Object*>::const_iterator Scene::gameObjectsEnd()
+{
+	return gameObjects.cend();
+}
+
+vector<Object*>::const_iterator Scene::guiObjectsBegin()
+{
+	return guiObjects.cbegin();
+}
+
+vector<Object*>::const_iterator Scene::guiObjectsEnd()
+{
+	return guiObjects.cend();
 }

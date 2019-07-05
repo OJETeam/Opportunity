@@ -15,10 +15,10 @@ public:
 	static float moveSpeed;
 	static float scaleSpeed;
 
+	static void Update();
 	static void recalculateMatrix();
 	static Vector2 getPosition();
 	static void setPosition(const Vector2& position);
 	static float getScale();
 	static void setScale(float scale);
-	static void Update();
 };
