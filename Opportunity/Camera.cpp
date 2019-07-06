@@ -23,7 +23,7 @@ void Camera::Update()
 	else if (glfwGetKey(Window::window, GLFW_KEY_LEFT) == GLFW_PRESS)
 		movement.x -= deltaMovement;
 
-	setPosition(movement);
+	position = movement;
 
 	const float deltaScale = (scaleSpeed * Time::DeltaTime()) * scale;
 	float newScale = scale;
@@ -33,19 +33,28 @@ void Camera::Update()
 	else if (glfwGetKey(Window::window, GLFW_KEY_MINUS) == GLFW_PRESS)
 		newScale -= deltaScale;
 
-	setScale(newScale);
+	scale = newScale;
+
+	RecalculateMatrix();
 }
 
-void Camera::recalculateMatrix()
+void Camera::RecalculateMatrix()
 {
 	glm::mat4 mat = glm::mat4(1.0f);
 
 	mat = glm::translate(mat, glm::vec3((float)Window::width / 2, (float)Window::height / 2, 0));
-	mat = glm::scale(mat, glm::vec3(scale, scale, 0));
+	mat = glm::scale(mat, glm::vec3(scale, scale, 1.0f));
 	mat = glm::translate(mat, glm::vec3(-position.x, -position.y, 0));
 	mat = glm::translate(mat, glm::vec3(-(float)Window::width / 2, -(float)Window::height / 2, 0));
 
 	viewMatrix = mat;
+}
+
+Vector2 Camera::ScreenToWorldPoint(Vector2 screenPoint) //TODO maybe remove glm classes
+{
+	const vec4 glmWorldPoint = inverse(viewMatrix) * vec4(screenPoint.x, (float)Window::height - screenPoint.y, 0.0f, 1.0f);
+	
+	return Vector2(glmWorldPoint.x, glmWorldPoint.y);
 }
 
 Vector2 Camera::getPosition()
@@ -57,7 +66,7 @@ void Camera::setPosition(const Vector2& position)
 {
 	Camera::position = position;
 
-	recalculateMatrix();
+	RecalculateMatrix();
 }
 
 float Camera::getScale()
@@ -69,5 +78,5 @@ void Camera::setScale(float scale)
 {
 	Camera::scale = scale;
 
-	recalculateMatrix();
+	RecalculateMatrix();
 }

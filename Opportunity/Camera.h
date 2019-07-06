@@ -5,6 +5,8 @@
 
 #include "Vector2.h"
 
+using namespace glm;
+
 class Camera
 {
 private:
@@ -16,7 +18,8 @@ public:
 	static float scaleSpeed;
 
 	static void Update();
-	static void recalculateMatrix();
+	static void RecalculateMatrix();
+	static Vector2 ScreenToWorldPoint(Vector2 screenPoint);
 	static Vector2 getPosition();
 	static void setPosition(const Vector2& position);
 	static float getScale();

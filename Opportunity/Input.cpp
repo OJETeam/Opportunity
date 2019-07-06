@@ -1,5 +1,6 @@
 #include "Input.h"
 #include "Game.h"
+#include "Camera.h"
 
 Input::ButtonState Input::keys[keyCount];
 Input::ButtonState Input::mouseButtons[mouseButtonCount];
@@ -38,15 +39,14 @@ void Input::Update()
 		updateMouseButtons = false;
 	}
 
-	Vector2 mousePos = GetMousePosition();
-	Vector2 mousePosTransformed = Vector2(mousePos.x, (float)Window::height - mousePos.y);
+	Vector2 mouseWorldPos = Camera::ScreenToWorldPoint(GetMousePosition());
 	bool isObjectFound = false;
 
 	for (auto i = Game::GetScene()->guiObjectsEnd(); i != Game::GetScene()->guiObjectsBegin(); ) //reverse iterator hack
 	{
 		--i;
 
-		if (CheckObjectMouseCollision(*i, mousePosTransformed))
+		if (CheckObjectMouseCollision(*i, mouseWorldPos))
 			isObjectFound = true;
 	}
 
@@ -54,7 +54,7 @@ void Input::Update()
 	{
 		--i;
 
-		if (CheckObjectMouseCollision(*i, mousePosTransformed))
+		if (CheckObjectMouseCollision(*i, mouseWorldPos))
 			isObjectFound = true;
 	}
 
