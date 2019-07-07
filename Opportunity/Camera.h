@@ -14,6 +14,7 @@ private:
 	static float scale;
 public:
 	static glm::mat4 viewMatrix;
+	static glm::mat4 viewMatrixInverse;
 	static float moveSpeed;
 	static float scaleSpeed;
 

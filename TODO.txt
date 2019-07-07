@@ -7,8 +7,8 @@
 	(Scenes)
 	(GameScripts)
 	(Input)
+	(Camera::screenToWorld and all much conversions)
 	Colliders
-	Camera::screenToWorld and all much conversions
 	Clicks
 	gui
 		basic elements

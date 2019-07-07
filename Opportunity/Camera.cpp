@@ -3,6 +3,7 @@
 #include "Time.h"
 
 glm::mat4 Camera::viewMatrix = glm::mat4(1.0f);
+glm::mat4 Camera::viewMatrixInverse = glm::mat4(1.0f);
 Vector2 Camera::position = Vector2(0, 0);
 float Camera::scale = 1.0f;
 float Camera::moveSpeed = 500;
@@ -48,12 +49,13 @@ void Camera::RecalculateMatrix()
 	mat = glm::translate(mat, glm::vec3(-(float)Window::width / 2, -(float)Window::height / 2, 0));
 
 	viewMatrix = mat;
+	viewMatrixInverse = inverse(mat); //TODO maybe inverse matrix function is not optimal
 }
 
 Vector2 Camera::ScreenToWorldPoint(Vector2 screenPoint) //TODO maybe remove glm classes
 {
-	const vec4 glmWorldPoint = inverse(viewMatrix) * vec4(screenPoint.x, (float)Window::height - screenPoint.y, 0.0f, 1.0f);
-	
+	const vec4 glmWorldPoint = viewMatrixInverse * vec4(screenPoint.x, (float)Window::height - screenPoint.y, 0.0f, 1.0f);
+
 	return Vector2(glmWorldPoint.x, glmWorldPoint.y);
 }
 
