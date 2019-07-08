@@ -8,12 +8,13 @@
 	(GameScripts)
 	(Input)
 	(Camera::screenToWorld and all much conversions)
-	Colliders
+	(Camera zoom)
 	Clicks
+	Physics
+	Colliders
 	gui
 		basic elements
 		text
-	Camera zoom
 	Map experiments
 	textures
 	parent-child size updating
