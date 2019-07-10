@@ -43,41 +43,6 @@ Scene* Game::GetScene()
 	return loadedScene;
 }
 
-void Game::AddObject(GameObject& object)
-{
-	loadedScene->AddObject(object);
-
-#ifdef DEBUG_PIVOT
-	PivotVisualizer* pivotVisualizer = new PivotVisualizer(&object);
-	gameObjectsModifications[pivotVisualizer] = true;
-#endif
-}
-
-void Game::RemoveObject(GameObject& object)
-{
-	loadedScene->RemoveObject(object);
-}
-
-void Game::AddObject(GuiObject& object)
-{
-	loadedScene->AddObject(object);
-}
-
-void Game::RemoveObject(GuiObject& object)
-{
-	loadedScene->RemoveObject(object);
-}
-
-void Game::AddScript(IGameScript& script)
-{
-	loadedScene->AddScript(script);
-}
-
-void Game::RemoveScript(IGameScript& script)
-{
-	loadedScene->RemoveScript(script);
-}
-
 void Game::UpdateDepth()
 {
 	loadedScene->UpdateDepth();

@@ -15,6 +15,8 @@ public:
 	Vector2& operator+=(Vector2 second);
 	Vector2 operator-(Vector2 second) const;
 	Vector2& operator-=(Vector2 second);
+	Vector2 operator*(Vector2 second) const; //TODO not mathematically correct
+	Vector2 operator/(Vector2 second) const;
 	Vector2 operator*(float second) const;
 	Vector2 operator/(float second) const;
 	bool operator==(const Vector2& other) const;

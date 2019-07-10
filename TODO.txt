@@ -9,6 +9,7 @@
 	(Input)
 	(Camera::screenToWorld and all much conversions)
 	(Camera zoom)
+	(parent-child size updating)
 	Clicks
 	Physics
 	Colliders
@@ -17,7 +18,6 @@
 		text
 	Map experiments
 	textures
-	parent-child size updating
 	Pivot for parent???????
 	coroutines, timed invokes
 	AABB for colliders on clicks and collisions
@@ -35,3 +35,6 @@
 	Implement unit that can move in any direction, not only relative to its rotation
 	Transform class like in Unity3D?
 	SWITCH ENGINE TO COMPONENT SYSTEM?
+
+[Test]
+	Scale objects

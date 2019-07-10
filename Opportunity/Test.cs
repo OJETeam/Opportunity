@@ -9,7 +9,7 @@ namespace Test
         public override void Start()
         {
             Console.WriteLine("TestScript started!");
-            Unit.rotation = 1f;
+            //Unit.rotation = 1f;
             Unit.speed = 10;
             Unit.direction = new Vector2(1, 3);
         }

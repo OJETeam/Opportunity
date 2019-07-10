@@ -35,7 +35,7 @@
       <FileName>Unit.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="EscapeMenu" Collapsed="true">
+  <Class Name="EscapeMenu">
     <Position X="6.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -45,7 +45,7 @@
   <Class Name="Game" Collapsed="true">
     <Position X="18.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAACAAACAAAQAAAAAACAAABCAAAAAgABAAAAAAAAA=</HashCode>
+      <HashCode>AAQAACAAACAAAQAAAAAACAAABCAAAAAgCBAAAAAAAAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,21 +66,21 @@
   <Class Name="Input" Collapsed="true">
     <Position X="20" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QERABAAEACAKAAAAAAQAAAgAAAiAAAAAADAAACAgQAA=</HashCode>
+      <HashCode>QERARAAEACAKAAAAgAQAAAgAQAiAAAAAADAAACAgQAA=</HashCode>
       <FileName>Input.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Object" Collapsed="true">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAIIAACIAAAExgIACAIAACCCAEAABACBAAOGAIAAA=</HashCode>
+      <HashCode>AASAJIQACYAAAExgIADAIAACGCAEAARMCBAAOGAYAAg=</HashCode>
       <FileName>Object.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Scene" Collapsed="true">
     <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQA4CCAAQEABQAAgAAAAAAARAAAAAQkAAAAAAAAAQA=</HashCode>
+      <HashCode>AAQA4CCAEQEABQAAgAAAAAgARAAAAAQkABAAAAAAAQA=</HashCode>
       <FileName>Scene.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -115,7 +115,7 @@
   <Class Name="Camera" Collapsed="true">
     <Position X="16.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAIAAAEAAAAAAAAAAAIgACAAAgAAACAAAAAAAQEAA=</HashCode>
+      <HashCode>AAQAIAAAEAAAAAAAAAAAIgACAAAgAAACAAAAAAAQAAg=</HashCode>
       <FileName>Camera.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -129,7 +129,7 @@
   <Class Name="Vector2" Collapsed="true">
     <Position X="18.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAAARAAAAAEAIAQAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAARAAAAAEAIAQAAAAAAAAAAIABgAAAAAAA=</HashCode>
       <FileName>Vector2.h</FileName>
     </TypeIdentifier>
   </Class>

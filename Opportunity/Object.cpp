@@ -13,6 +13,7 @@ Object::Object(Vector2 position, Model model) : position(position), model(model)
 	glGenBuffers(1, &vbo);
 
 	UpdateModel();
+	UpdateTransform();
 }
 
 Object::~Object()
@@ -61,6 +62,7 @@ void Object::setPosition(Vector2 position)
 
 		for (int i = 0; i < children.size(); i++)
 			children[i]->setPosition(children[i]->position + diff);
+
 	}
 
 	this->position = position;
@@ -75,7 +77,19 @@ Vector2 Object::getSize() const
 
 void Object::setSize(Vector2 scale)
 {
-	//TODO parent
+	if (!children.empty())
+	{
+		const Vector2 diff = scale - this->scale;
+
+		for (int i = 0; i < children.size(); i++)
+		{
+			Object& child = *children[i];
+
+			child.setPosition(position + diff * (child.position - position));
+			child.setSize(child.scale + diff);
+		}
+	}
+
 	this->scale = scale;
 
 	UpdateTransform();

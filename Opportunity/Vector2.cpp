@@ -31,6 +31,16 @@ Vector2& Vector2::operator-=(Vector2 second)
 	return *this;
 }
 
+Vector2 Vector2::operator*(Vector2 second) const
+{
+	return Vector2(x * second.x, y * second.y);
+}
+
+Vector2 Vector2::operator/(Vector2 second) const
+{
+	return Vector2(x / second.x, y / second.y);
+}
+
 Vector2 Vector2::operator*(float second) const
 {
 	return Vector2(x * second, y * second);
