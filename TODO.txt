@@ -23,6 +23,7 @@
 	AABB for colliders on clicks and collisions
 	 
 [FIX]
+	Deeply nested child-parent system is not working correctly
 	Window resize
 	UpdateModel
 	Check all TODO comments (after first prototype)

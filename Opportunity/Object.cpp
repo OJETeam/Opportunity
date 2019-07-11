@@ -62,7 +62,6 @@ void Object::setPosition(Vector2 position)
 
 		for (int i = 0; i < children.size(); i++)
 			children[i]->setPosition(children[i]->position + diff);
-
 	}
 
 	this->position = position;

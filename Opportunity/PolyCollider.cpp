@@ -39,13 +39,6 @@ void PolyCollider::Update(const mat4& modelMatrix)
 
 		transformedModel.push_back(Vector2(transformedVec.x, transformedVec.y));
 	}
-
-	//TODO TEST
-	if (Input::IsKeyClicked(GLFW_KEY_SLASH))
-	{
-		Unit* u = new Unit(Vector2(0, 0), Model(transformedModel, Color::White));
-		Game::AddObject(*u);
-	}
 }
 
 bool PolyCollider::InCollider(Vector2 vec) const

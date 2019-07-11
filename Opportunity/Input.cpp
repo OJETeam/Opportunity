@@ -39,7 +39,7 @@ void Input::Update()
 		updateMouseButtons = false;
 	}
 
-	Vector2 mouseWorldPos = Camera::ScreenToWorldPoint(GetMousePosition());
+	Vector2 mouseWorldPos = Camera::ScreenToWorldPoint(GetMousePosition()); //TODO move from here!
 	bool isObjectFound = false;
 
 	for (auto i = Game::GetScene()->guiObjectsEnd(); i != Game::GetScene()->guiObjectsBegin(); ) //reverse iterator hack
