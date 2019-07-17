@@ -173,6 +173,10 @@ void Object::OnMousePressed(unsigned mouseButton)
 {
 }
 
+void Object::OnMouseUp(unsigned mouseButton)
+{
+}
+
 void Object::OnMouseHeld(unsigned mouseButton)
 {
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <map>
 #include <glm/glm.hpp>
 
 #include "Window.h"
@@ -35,6 +36,7 @@ private:
 	static bool updateKeys;
 	static bool updateMouseButtons;
 	static Object* mouseOverObject;
+	static map<int>
 
 	static bool CheckObjectMouseCollision(Object* obj, Vector2 mousePos);
 
