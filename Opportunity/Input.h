@@ -36,9 +36,11 @@ private:
 	static bool updateKeys;
 	static bool updateMouseButtons;
 	static Object* mouseOverObject;
-	static map<int>
+	static Object* mousePressObjects[mouseButtonCount];
 
-	static bool CheckObjectMouseCollision(Object* obj, Vector2 mousePos);
+	static void UpdateMouseButtonEvents();
+	static void UpdateMouseCollision();
+	static bool IsMouseCollidingObject(Object* obj, Vector2 mousePos);
 
 	static void KeyCallback(GLFWwindow* window, int key, int scanCode, int action, int mods);
 	static void MouseButtonCallback(GLFWwindow* window, int mouseButton, int action, int mods);

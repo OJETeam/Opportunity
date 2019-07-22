@@ -21,6 +21,7 @@
 	Pivot for parent???????
 	coroutines, timed invokes
 	AABB for colliders on clicks and collisions
+	Names for Objects
 	 
 [FIX]
 	Deeply nested child-parent system is not working correctly

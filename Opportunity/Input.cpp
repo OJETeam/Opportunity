@@ -7,6 +7,7 @@ Input::ButtonState Input::mouseButtons[mouseButtonCount];
 bool Input::updateKeys = false;
 bool Input::updateMouseButtons = false;
 Object* Input::mouseOverObject = nullptr;
+Object* Input::mousePressObjects[mouseButtonCount];
 
 void Input::Start()
 {
@@ -16,6 +17,9 @@ void Input::Start()
 
 void Input::Update()
 {
+	UpdateMouseCollision();
+	UpdateMouseButtonEvents();
+
 	if (updateKeys)
 	{
 		for (ButtonState& state : keys)
@@ -38,24 +42,59 @@ void Input::Update()
 		}
 		updateMouseButtons = false;
 	}
+}
 
-	Vector2 mouseWorldPos = Camera::ScreenToWorldPoint(GetMousePosition()); //TODO move from here!
+void Input::UpdateMouseButtonEvents()
+{
+	for (unsigned int i = 0; i < mouseButtonCount; i++)
+	{
+		ButtonState state = mouseButtons[i];
+
+		if (state == ButtonState::Pressed && mouseOverObject != nullptr)
+		{
+			mouseOverObject->OnMousePressed(i);
+			mousePressObjects[i] = mouseOverObject;
+		}
+		else if (state == ButtonState::Held && mousePressObjects[i] != nullptr)
+		{
+			mousePressObjects[i]->OnMouseHeld(i);
+		}
+		else if (state == ButtonState::Clicked)
+		{
+			if (mouseOverObject != nullptr)
+			{
+				mouseOverObject->OnMouseReleased(i);
+
+				if (mouseOverObject == mousePressObjects[i])
+					mouseOverObject->OnMouseClicked(i);
+			}
+
+			mousePressObjects[i] = nullptr;
+		}
+	}
+}
+
+void Input::UpdateMouseCollision()
+{
+	Vector2 mouseWorldPos = Camera::ScreenToWorldPoint(GetMousePosition());
 	bool isObjectFound = false;
 
-	for (auto i = Game::GetScene()->guiObjectsEnd(); i != Game::GetScene()->guiObjectsBegin(); ) //reverse iterator hack
+	for (auto i = Game::GetScene()->gameObjectsBegin(); i != Game::GetScene()->gameObjectsEnd(); ++i)
 	{
-		--i;
-
-		if (CheckObjectMouseCollision(*i, mouseWorldPos))
+		if (IsMouseCollidingObject(*i, mouseWorldPos))
+		{
 			isObjectFound = true;
+			break;
+		}
 	}
 
-	for (auto i = Game::GetScene()->gameObjectsEnd(); i != Game::GetScene()->gameObjectsBegin(); )
+	for(auto i = Game::GetScene()->gameObjectsBegin(); i != Game::GetScene()->gameObjectsEnd(); ++i)
 	{
-		--i;
-
-		if (CheckObjectMouseCollision(*i, mouseWorldPos))
+		if (IsMouseCollidingObject(*i, mouseWorldPos))
+		{
 			isObjectFound = true;
+			break;
+		}
 	}
 
 	if (!isObjectFound && mouseOverObject != nullptr)
@@ -65,7 +104,7 @@ void Input::Update()
 	}
 }
 
-bool Input::CheckObjectMouseCollision(Object* obj, Vector2 mousePos)
+bool Input::IsMouseCollidingObject(Object* obj, Vector2 mousePos)
 {
 	if (obj->collider == nullptr)
 		return false;
@@ -175,7 +214,6 @@ void Input::KeyCallback(GLFWwindow* window, int key, int scanCode, int action, i
 
 void Input::MouseButtonCallback(GLFWwindow* window, int mouseButton, int action, int mods)
 {
-	ButtonState state = static_cast<ButtonState>(action);
 	ButtonState& currentState = mouseButtons[mouseButton];
 
 	if (action == GLFW_PRESS)
