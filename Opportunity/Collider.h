@@ -17,6 +17,6 @@ public:
 	virtual ~Collider();
 
 	bool IsColliding(const Collider& collider) const;
-	virtual bool InCollider(Vector2 vec) const = 0;
+	virtual bool IsInCollider(Vector2 vec) const = 0;
 	virtual void Update(const mat4& modelMatrix) = 0;
 };

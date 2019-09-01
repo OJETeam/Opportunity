@@ -36,7 +36,7 @@ private:
 	static bool updateKeys;
 	static bool updateMouseButtons;
 	static Object* mouseOverObject;
-	static map<int>
+	static map<int> // TODO implement Object mouse states (OnMouseEnter, OnMouseExit, OnMouseOver etc.). Find a way to store Object:State in a container
 
 	static bool CheckObjectMouseCollision(Object* obj, Vector2 mousePos);
 

@@ -70,7 +70,7 @@ bool Input::CheckObjectMouseCollision(Object* obj, Vector2 mousePos)
 	if (obj->collider == nullptr)
 		return false;
 
-	if (obj->collider->InCollider(mousePos))
+	if (obj->collider->IsInCollider(mousePos))
 	{
 		if (mouseOverObject == obj)
 		{

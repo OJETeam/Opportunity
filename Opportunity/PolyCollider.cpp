@@ -41,7 +41,7 @@ void PolyCollider::Update(const mat4& modelMatrix)
 	}
 }
 
-bool PolyCollider::InCollider(Vector2 vec) const
+bool PolyCollider::IsInCollider(Vector2 vec) const
 {
 	int lineCount = 0;
 
