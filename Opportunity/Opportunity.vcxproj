@@ -105,6 +105,7 @@
     <ClCompile Include="Script.cpp" />
     <ClCompile Include="ScriptLibrary.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="TestGameObject.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="TestScript.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="Script.h" />
     <ClInclude Include="ScriptLibrary.h" />
     <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="TestGameObject.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="TestScript.h" />
     <ClInclude Include="Texture.h" />

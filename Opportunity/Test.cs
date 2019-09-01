@@ -10,7 +10,7 @@ namespace Test
         {
             Console.WriteLine("TestScript started!");
             //Unit.rotation = 1f;
-            Unit.speed = 10;
+            //Unit.speed = 10;
             Unit.direction = new Vector2(1, 3);
         }
 

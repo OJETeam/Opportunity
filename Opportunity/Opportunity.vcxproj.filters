@@ -126,6 +126,7 @@
     <ClInclude Include="PolyCollider.h">
       <Filter>Engine\Colliders</Filter>
     </ClInclude>
+    <ClInclude Include="TestGameObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
@@ -223,6 +224,7 @@
     <ClCompile Include="PolyCollider.cpp">
       <Filter>Engine\Colliders</Filter>
     </ClCompile>
+    <ClCompile Include="TestGameObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fragment.frag">

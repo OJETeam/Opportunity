@@ -52,7 +52,6 @@ public:
 	virtual void OnMouseOver();
 	virtual void OnMouseExit();
 	virtual void OnMousePressed(unsigned int mouseButton);
-	virtual void OnMouseUp(unsigned int mouseButton);
 	virtual void OnMouseHeld(unsigned int mouseButton);
 	virtual void OnMouseReleased(unsigned int mouseButton);
 	virtual void OnMouseClicked(unsigned int mouseButton);

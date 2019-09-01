@@ -151,12 +151,9 @@ void Object::OnCreate()
 void Object::OnDelete()
 {
 }
-Color _color;
+
 void Object::OnMouseEnter()
 {
-	_color = model.color;
-	model.color = Color(1, 1, 0);
-	cout << "enter" << endl;
 }
 
 void Object::OnMouseOver()
@@ -165,15 +162,9 @@ void Object::OnMouseOver()
 
 void Object::OnMouseExit()
 {
-	model.color = _color;
-	cout << "exit" << endl;
 }
 
 void Object::OnMousePressed(unsigned mouseButton)
-{
-}
-
-void Object::OnMouseUp(unsigned mouseButton)
 {
 }
 
