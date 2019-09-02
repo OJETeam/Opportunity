@@ -13,7 +13,7 @@ public:
 	void OnMouseOver() override;
 	void OnMouseExit() override;
 	void OnMousePressed(unsigned int mouseButton) override;
-	void OnMouseHeld(unsigned int mouseButton) override;
+	void OnMouseDrag(unsigned int mouseButton) override;
 	void OnMouseReleased(unsigned int mouseButton) override;
 	void OnMouseClicked(unsigned int mouseButton) override;
 	void OnCollisionEnter(Object& obj) override;

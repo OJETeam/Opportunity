@@ -168,7 +168,7 @@ void Object::OnMousePressed(unsigned mouseButton)
 {
 }
 
-void Object::OnMouseHeld(unsigned mouseButton)
+void Object::OnMouseDrag(unsigned mouseButton)
 {
 }
 

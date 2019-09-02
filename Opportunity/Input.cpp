@@ -17,10 +17,11 @@ void Input::Start()
 
 void Input::Update()
 {
-	UpdateMouseCollision();
-	UpdateMouseButtonEvents();
+	Object* newMouseOverObject = FirstObjectUnderMouse();
 
-	if (updateKeys)
+	InvokeMouseObjectEvents();
+
+	if (updateKeys) // TODO move to function
 	{
 		for (ButtonState& state : keys)
 		{
@@ -31,7 +32,7 @@ void Input::Update()
 		}
 		updateKeys = false;
 	}
-	if (updateMouseButtons)
+	if (updateMouseButtons) // TODO move to function
 	{
 		for (ButtonState& state : mouseButtons)
 		{
@@ -44,67 +45,68 @@ void Input::Update()
 	}
 }
 
-void Input::UpdateMouseButtonEvents()
+void Input::InvokeMouseObjectEvents()
 {
-	for (unsigned int i = 0; i < mouseButtonCount; i++)
-	{
-		ButtonState state = mouseButtons[i];
+	if (newMouseOverObject) // TODO set new mouse over object and call OnMouseExit on it
 
-		if (state == ButtonState::Pressed && mouseOverObject != nullptr)
+		for (unsigned int i = 0; i < mouseButtonCount; i++)
 		{
-			mouseOverObject->OnMousePressed(i);
-			mousePressObjects[i] = mouseOverObject;
-		}
-		else if (state == ButtonState::Held && mousePressObjects[i] != nullptr)
-		{
-			mousePressObjects[i]->OnMouseHeld(i);
-		}
-		else if (state == ButtonState::Clicked)
-		{
-			if (mouseOverObject != nullptr)
+			ButtonState state = mouseButtons[i];
+
+			if (state == ButtonState::Pressed && mouseOverObject != nullptr)
 			{
-				mouseOverObject->OnMouseReleased(i);
-
-				if (mouseOverObject == mousePressObjects[i])
-					mouseOverObject->OnMouseClicked(i);
+				mouseOverObject->OnMousePressed(i);
+				mousePressObjects[i] = mouseOverObject;
 			}
+			else if (state == ButtonState::Held && mousePressObjects[i] != nullptr)
+			{
+				mousePressObjects[i]->OnMouseDrag(i);
+			}
+			else if (state == ButtonState::Clicked)
+			{
+				if (mouseOverObject != nullptr)
+				{
+					mouseOverObject->OnMouseReleased(i);
 
-			mousePressObjects[i] = nullptr;
+					if (mouseOverObject == mousePressObjects[i])
+						mouseOverObject->OnMouseClicked(i);
+				}
+
+				mousePressObjects[i] = nullptr;
+			}
 		}
-	}
 }
 
-void Input::UpdateMouseCollision()
+Object* Input::FirstObjectUnderMouse()
 {
+	Object* foundObject = nullptr;
 	Vector2 mouseWorldPos = Camera::ScreenToWorldPoint(GetMousePosition());
-	bool isObjectFound = false;
 
-	for (auto i = Game::GetScene()->gameObjectsBegin(); i != Game::GetScene()->gameObjectsEnd(); ++i)
+	for (auto i = Game::GetScene()->guiObjectsBegin(); i != Game::GetScene()->guiObjectsEnd(); ++i)
 	{
 		if (IsMouseCollidingObject(*i, mouseWorldPos))
 		{
-			isObjectFound = true;
+			foundObject = *i;
 			break;
 		}
 	}
 
-	for(auto i = Game::GetScene()->gameObjectsBegin(); i != Game::GetScene()->gameObjectsEnd(); ++i)
+	if (!foundObject)
 	{
-		if (IsMouseCollidingObject(*i, mouseWorldPos))
+		for (auto i = Game::GetScene()->gameObjectsBegin(); i != Game::GetScene()->gameObjectsEnd(); ++i)
 		{
-			isObjectFound = true;
-			break;
+			if (IsMouseCollidingObject(*i, mouseWorldPos))
+			{
+				foundObject = *i;
+				break;
+			}
 		}
 	}
 
-	if (!isObjectFound && mouseOverObject != nullptr)
-	{
-		mouseOverObject->OnMouseExit();
-		mouseOverObject = nullptr;
-	}
+	return foundObject;
 }
 
-bool Input::IsMouseCollidingObject(Object* obj, Vector2 mousePos)
+bool Input::IsMouseCollidingObject(Object* obj, Vector2 mousePos)FUCK //TODO REWRITE FAST, SHITTY NAME, BAD CODE, SIDE EFFECTS!
 {
 	if (obj->collider == nullptr)
 		return false;

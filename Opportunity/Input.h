@@ -38,8 +38,8 @@ private:
 	static Object* mouseOverObject;
 	static Object* mousePressObjects[mouseButtonCount];
 
-	static void UpdateMouseButtonEvents();
-	static void UpdateMouseCollision();
+	static void InvokeMouseObjectEvents();
+	static Object* FirstObjectUnderMouse();
 	static bool IsMouseCollidingObject(Object* obj, Vector2 mousePos);
 
 	static void KeyCallback(GLFWwindow* window, int key, int scanCode, int action, int mods);
