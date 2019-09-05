@@ -17,9 +17,7 @@ void Input::Start()
 
 void Input::Update()
 {
-	InvokeMouseObjectEvents();
 
-	InvokeMouseObjectEvents();
 
 	if (updateKeys) // TODO move to function
 	{
@@ -45,9 +43,10 @@ void Input::Update()
 	}
 }
 
-void Input::InvokeMouseObjectEvents()
+void Input::UpdateMouseOverObject()
 {
-	if (newMouseOverObject) // TODO set new mouse over object and call OnMouseExit on it
+	Object* newMouseOverObject = GetMouseOverObject();
+	if (newMouseOverObject)
 
 		for (unsigned int i = 0; i < mouseButtonCount; i++)
 		{
@@ -77,26 +76,27 @@ void Input::InvokeMouseObjectEvents()
 		}
 }
 
-Object* Input::InvokeMouseObjectEvents()
+Object* Input::GetMouseOverObject()
 {
-	Vector2 mouseWorldPos = Camera::ScreenToWorldPoint(GetMousePosition());
+	Object* foundObject = nullptr;
+	const Vector2 mouseWorldPos = Camera::ScreenToWorldPoint(GetMousePosition());
 
 	for (auto i = Game::GetScene()->guiObjectsBegin(); i != Game::GetScene()->guiObjectsEnd(); ++i)
 	{
-		if (UpdateMouseOverObject(*i, mouseWorldPos))
+		if (IsMouseCollidingObject(*i, mouseWorldPos))
 		{
-			mouseOverObject = *i;
+			foundObject = *i;
 			break;
 		}
 	}
 
-	if (!mouseOverObject)
+	if (!foundObject)
 	{
 		for (auto i = Game::GetScene()->gameObjectsBegin(); i != Game::GetScene()->gameObjectsEnd(); ++i)
 		{
-			if (UpdateMouseOverObject(*i, mouseWorldPos))
+			if (IsMouseCollidingObject(*i, mouseWorldPos))
 			{
-				mouseOverObject = *i;
+				foundObject = *i;
 				break;
 			}
 		}
@@ -107,7 +107,7 @@ Object* Input::InvokeMouseObjectEvents()
 
 bool Input::IsMouseCollidingObject(Object* obj, Vector2 mousePos)
 {
-
+	return obj->collider != nullptr && obj->collider->IsInCollider(mousePos);
 }
 
 bool Input::UpdateMouseOverObject(Object* obj, Vector2 mousePos)
