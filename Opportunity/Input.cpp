@@ -17,7 +17,7 @@ void Input::Start()
 
 void Input::Update()
 {
-	Object* newMouseOverObject = FirstObjectUnderMouse();
+	InvokeMouseObjectEvents();
 
 	InvokeMouseObjectEvents();
 
@@ -77,27 +77,26 @@ void Input::InvokeMouseObjectEvents()
 		}
 }
 
-Object* Input::FirstObjectUnderMouse()
+Object* Input::InvokeMouseObjectEvents()
 {
-	Object* foundObject = nullptr;
 	Vector2 mouseWorldPos = Camera::ScreenToWorldPoint(GetMousePosition());
 
 	for (auto i = Game::GetScene()->guiObjectsBegin(); i != Game::GetScene()->guiObjectsEnd(); ++i)
 	{
-		if (IsMouseCollidingObject(*i, mouseWorldPos))
+		if (UpdateMouseOverObject(*i, mouseWorldPos))
 		{
-			foundObject = *i;
+			mouseOverObject = *i;
 			break;
 		}
 	}
 
-	if (!foundObject)
+	if (!mouseOverObject)
 	{
 		for (auto i = Game::GetScene()->gameObjectsBegin(); i != Game::GetScene()->gameObjectsEnd(); ++i)
 		{
-			if (IsMouseCollidingObject(*i, mouseWorldPos))
+			if (UpdateMouseOverObject(*i, mouseWorldPos))
 			{
-				foundObject = *i;
+				mouseOverObject = *i;
 				break;
 			}
 		}
@@ -106,7 +105,12 @@ Object* Input::FirstObjectUnderMouse()
 	return foundObject;
 }
 
-bool Input::IsMouseCollidingObject(Object* obj, Vector2 mousePos)FUCK //TODO REWRITE FAST, SHITTY NAME, BAD CODE, SIDE EFFECTS!
+bool Input::IsMouseCollidingObject(Object* obj, Vector2 mousePos)
+{
+
+}
+
+bool Input::UpdateMouseOverObject(Object* obj, Vector2 mousePos)
 {
 	if (obj->collider == nullptr)
 		return false;
