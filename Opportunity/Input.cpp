@@ -17,63 +17,45 @@ void Input::Start()
 
 void Input::Update()
 {
+	Object* newMouseOverObject = GetMouseOverObject();
+	InvokeMouseOverObjectEvents(newMouseOverObject);
 
+	mouseOverObject = newMouseOverObject;
 
-	if (updateKeys) // TODO move to function
+	InvokeMouseClickObjectEvents();
+
+	if (updateKeys)
 	{
-		for (ButtonState& state : keys)
-		{
-			if (state == ButtonState::Clicked)
-				state = ButtonState::Released;
-			else if (state == ButtonState::Pressed)
-				state = ButtonState::Held;
-		}
+		UpdateKeysState();
 		updateKeys = false;
 	}
-	if (updateMouseButtons) // TODO move to function
+	if (updateMouseButtons)
 	{
-		for (ButtonState& state : mouseButtons)
-		{
-			if (state == ButtonState::Clicked)
-				state = ButtonState::Released;
-			else if (state == ButtonState::Pressed)
-				state = ButtonState::Held;
-		}
+		UpdateMouseButtonsState();
 		updateMouseButtons = false;
 	}
 }
 
-void Input::UpdateMouseOverObject()
+void Input::UpdateKeysState()
 {
-	Object* newMouseOverObject = GetMouseOverObject();
-	if (newMouseOverObject)
+	for (ButtonState& state : keys)
+	{
+		if (state == ButtonState::Clicked)
+			state = ButtonState::Released;
+		else if (state == ButtonState::Pressed)
+			state = ButtonState::Held;
+	}
+}
 
-		for (unsigned int i = 0; i < mouseButtonCount; i++)
-		{
-			ButtonState state = mouseButtons[i];
-
-			if (state == ButtonState::Pressed && mouseOverObject != nullptr)
-			{
-				mouseOverObject->OnMousePressed(i);
-				mousePressObjects[i] = mouseOverObject;
-			}
-			else if (state == ButtonState::Held && mousePressObjects[i] != nullptr)
-			{
-				mousePressObjects[i]->OnMouseDrag(i);
-			}
-			else if (state == ButtonState::Clicked)
-			{
-				if (mouseOverObject != nullptr)
-				{
-					mouseOverObject->OnMouseReleased(i);
-
-					if (mouseOverObject == mousePressObjects[i])
-						mouseOverObject->OnMouseClicked(i);
-				}
-
-				mousePressObjects[i] = nullptr;
-			}
-		}
+void Input::UpdateMouseButtonsState()
+{
+	for (ButtonState& state : mouseButtons)
+	{
+		if (state == ButtonState::Clicked)
+			state = ButtonState::Released;
+		else if (state == ButtonState::Pressed)
+			state = ButtonState::Held;
+	}
 }
 
 Object* Input::GetMouseOverObject()
@@ -110,29 +92,51 @@ bool Input::IsMouseCollidingObject(Object* obj, Vector2 mousePos)
 	return obj->collider != nullptr && obj->collider->IsInCollider(mousePos);
 }
 
-bool Input::UpdateMouseOverObject(Object* obj, Vector2 mousePos)
+void Input::InvokeMouseOverObjectEvents(Object* newMouseOverObject)
 {
-	if (obj->collider == nullptr)
-		return false;
-
-	if (obj->collider->IsInCollider(mousePos))
+	if (newMouseOverObject != mouseOverObject)
 	{
-		if (mouseOverObject == obj)
-		{
-			obj->OnMouseOver();
-			return true;
-		}
+		if (newMouseOverObject != nullptr)
+			newMouseOverObject->OnMouseEnter();
 
 		if (mouseOverObject != nullptr)
 			mouseOverObject->OnMouseExit();
-
-		obj->OnMouseEnter();
-		mouseOverObject = obj;
-
-		return true;
 	}
+	else
+	{
+		if (mouseOverObject != nullptr)
+			mouseOverObject->OnMouseOver();
+	}
+}
 
-	return false;
+void Input::InvokeMouseClickObjectEvents()
+{
+	for (unsigned int i = 0; i < mouseButtonCount; i++)
+	{
+		ButtonState state = mouseButtons[i];
+
+		if (state == ButtonState::Pressed && mouseOverObject != nullptr)
+		{
+			mouseOverObject->OnMousePressed(i);
+			mousePressObjects[i] = mouseOverObject;
+		}
+		else if (state == ButtonState::Held && mousePressObjects[i] != nullptr)
+		{
+			mousePressObjects[i]->OnMouseDrag(i);
+		}
+		else if (state == ButtonState::Clicked)
+		{
+			if (mouseOverObject != nullptr)
+			{
+				mouseOverObject->OnMouseReleased(i);
+
+				if (mouseOverObject == mousePressObjects[i])
+					mouseOverObject->OnMouseClicked(i);
+			}
+
+			mousePressObjects[i] = nullptr;
+		}
+	}
 }
 
 Input::ButtonState Input::GetKeyState(unsigned int key)

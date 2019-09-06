@@ -28,6 +28,9 @@ void TestGameObject::OnMouseExit()
 
 void TestGameObject::OnMousePressed(unsigned mouseButton)
 {
+	if (mouseButton != 0)
+		return;
+
 	offsetPos = Camera::ScreenToWorldPoint(Input::GetMousePosition()) - position;
 	prevPos = position;
 	cout << "OnMousePressed " << to_string(mouseButton) << endl;
@@ -35,18 +38,27 @@ void TestGameObject::OnMousePressed(unsigned mouseButton)
 
 void TestGameObject::OnMouseDrag(unsigned mouseButton)
 {
+	if (mouseButton != 0)
+		return;
+
 	position = Camera::ScreenToWorldPoint(Input::GetMousePosition()) - offsetPos;
 	cout << "OnMouseDrag " << to_string(mouseButton) << endl;
 }
 
 void TestGameObject::OnMouseReleased(unsigned mouseButton)
 {
+	if (mouseButton != 0)
+		return;
+
 	position = prevPos;
 	cout << "OnMouseReleased " << to_string(mouseButton) << endl;
 }
 
 void TestGameObject::OnMouseClicked(unsigned mouseButton)
 {
+	if (mouseButton != 0)
+		return;
+
 	cout << "OnMouseClicked " << to_string(mouseButton) << endl;
 }
 

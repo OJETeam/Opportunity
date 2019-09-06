@@ -164,19 +164,19 @@ void Object::OnMouseExit()
 {
 }
 
-void Object::OnMousePressed(unsigned mouseButton)
+void Object::OnMousePressed(unsigned int mouseButton)
 {
 }
 
-void Object::OnMouseDrag(unsigned mouseButton)
+void Object::OnMouseDrag(unsigned int mouseButton)
 {
 }
 
-void Object::OnMouseReleased(unsigned mouseButton)
+void Object::OnMouseReleased(unsigned int mouseButton)
 {
 }
 
-void Object::OnMouseClicked(unsigned mouseButton)
+void Object::OnMouseClicked(unsigned int mouseButton)
 {
 }
 
