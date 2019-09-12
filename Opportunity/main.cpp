@@ -26,11 +26,13 @@ __declspec(dllexport) void Run()
 	glClearColor(1, 0, 1, 1);
 	glEnable(GL_DEPTH_TEST);
 
-	Game::Start(gameScene, gameScript);
 	Time::Start();
+	Game::Start(gameScene, gameScript);
+	
 	while (!Window::Exit)
 	{
 		Time::Update();
+
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		Game::Update();

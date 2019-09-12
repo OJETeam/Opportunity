@@ -42,7 +42,7 @@ void TestGameObject::OnMouseDrag(unsigned mouseButton)
 		return;
 
 	position = Camera::ScreenToWorldPoint(Input::GetMousePosition()) - offsetPos;
-	cout << "OnMouseDrag " << to_string(mouseButton) << endl;
+	//cout << "OnMouseDrag " << to_string(mouseButton) << endl;
 }
 
 void TestGameObject::OnMouseReleased(unsigned mouseButton)

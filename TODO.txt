@@ -24,7 +24,7 @@
 	Names for Objects
 	 
 [FIX]
-	MOVING OBJECTS FAST WITH MOUSE MAKES THEM DEPACH FROM CURSOR (TestGameObject.cpp)
+	MOVING OBJECTS FAST WITH MOUSE MAKES THEM DETACH FROM CURSOR (TestGameObject.cpp)
 	Deeply nested child-parent system is not working correctly
 	Window resize
 	UpdateModel
