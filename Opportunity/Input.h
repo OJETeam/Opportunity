@@ -35,9 +35,11 @@ private:
 	static ButtonState mouseButtons[mouseButtonCount];
 	static bool updateKeys;
 	static bool updateMouseButtons;
+	static Vector2 mousePosition;
 	static Object* mouseOverObject;
 	static Object* mousePressObjects[mouseButtonCount];
-	
+
+	static void UpdateMousePosition();
 	static void UpdateKeysState();
 	static void UpdateMouseButtonsState();
 	static Object* GetMouseOverObject();

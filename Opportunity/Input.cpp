@@ -6,6 +6,7 @@ Input::ButtonState Input::keys[keyCount];
 Input::ButtonState Input::mouseButtons[mouseButtonCount];
 bool Input::updateKeys = false;
 bool Input::updateMouseButtons = false;
+Vector2 Input::mousePosition;
 Object* Input::mouseOverObject = nullptr;
 Object* Input::mousePressObjects[mouseButtonCount];
 
@@ -17,6 +18,8 @@ void Input::Start()
 
 void Input::Update()
 {
+	UpdateMousePosition();
+
 	Object* newMouseOverObject = GetMouseOverObject();
 	InvokeMouseOverObjectEvents(newMouseOverObject);
 
@@ -34,6 +37,14 @@ void Input::Update()
 		UpdateMouseButtonsState();
 		updateMouseButtons = false;
 	}
+}
+
+void Input::UpdateMousePosition()
+{
+	double x, y;
+	glfwGetCursorPos(Window::window, &x, &y);
+
+	mousePosition = Vector2(static_cast<float>(x), static_cast<float>(y));
 }
 
 void Input::UpdateKeysState()
@@ -166,10 +177,7 @@ bool Input::IsKeyClicked(unsigned key)
 
 Vector2 Input::GetMousePosition()
 {
-	double x, y;
-	glfwGetCursorPos(Window::window, &x, &y);
-
-	return Vector2((float)x, (float)y);
+	return Vector2(mousePosition);
 }
 
 Input::ButtonState Input::GetMouseButtonState(unsigned int mouseButton)
